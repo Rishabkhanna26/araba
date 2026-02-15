@@ -1,19 +1,22 @@
+import { Inter } from 'next/font/google'
 import './globals.css'
 
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
+
 export const metadata = {
-  title: 'Next.js MongoDB Template',
-  description: 'A simple template with App Router, MongoDB, and shadcn/ui',
+  title: 'ARABA Coffee - Premium Coffee Experience',
+  description: 'Experience the perfect blend of luxury café atmosphere and automotive elegance. Premium artisanal coffee crafted with precision.',
+  keywords: 'premium coffee, artisanal café, ARABA Coffee, luxury coffee experience',
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <head>
-        <script dangerouslySetInnerHTML={{__html:'window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);'}} />
-      </head>
-      <body>
-        {children}
-      </body>
+    <html lang="en" className={inter.variable}>
+      <body className="antialiased">{children}</body>
     </html>
   )
 }
