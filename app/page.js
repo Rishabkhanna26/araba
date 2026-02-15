@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
-import { Coffee, MapPin, Clock, Phone, Mail, ChevronRight, Circle } from 'lucide-react'
+import { Coffee, MapPin, Clock, Phone, Mail, ChevronRight, Circle, Gauge, Fuel, Navigation, Star, Quote, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 
@@ -22,22 +22,62 @@ const App = () => {
 
   const coffeeMenu = [
     {
-      name: 'Signature Espresso',
-      description: 'Rich, bold, precision-crafted single shot',
+      name: 'Turbo Espresso',
+      description: 'High-octane single shot. Precision-engineered for maximum acceleration.',
       price: '$4.50',
-      image: 'https://images.unsplash.com/photo-1765180850178-8912d7688395'
+      image: 'https://images.unsplash.com/photo-1765180850178-8912d7688395',
+      power: '200 HP'
     },
     {
       name: 'Velvet Cappuccino',
-      description: 'Smooth microfoam with artistic perfection',
+      description: 'Smooth as a luxury ride. Microfoam tuned to perfection.',
       price: '$5.50',
-      image: 'https://images.unsplash.com/photo-1770349694645-c0bcaf544740'
+      image: 'https://images.unsplash.com/photo-1770349694645-c0bcaf544740',
+      power: '150 HP'
     },
     {
-      name: 'ARABA Latte',
-      description: 'House blend with caramel undertones',
+      name: 'ARABA Signature Latte',
+      description: 'Our flagship blend. Caramel undertones for the long drive.',
       price: '$5.00',
-      image: 'https://images.unsplash.com/photo-1760687510983-68b5e2525bd4'
+      image: 'https://images.unsplash.com/photo-1760687510983-68b5e2525bd4',
+      power: '180 HP'
+    },
+    {
+      name: 'Cold Brew Cruiser',
+      description: 'Smooth, cold-pressed energy. Perfect for highway cruising.',
+      price: '$6.00',
+      image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7',
+      power: '220 HP'
+    },
+  ]
+
+  const galleryImages = [
+    'https://images.unsplash.com/photo-1636928837218-f2b56d5a7861',
+    'https://images.unsplash.com/photo-1746040891289-68931e9ec409',
+    'https://images.unsplash.com/photo-1680946496238-5272d3c407fc',
+    'https://images.unsplash.com/photo-1770349694645-c0bcaf544740',
+    'https://images.unsplash.com/photo-1765180850178-8912d7688395',
+    'https://images.unsplash.com/photo-1760687510983-68b5e2525bd4',
+  ]
+
+  const testimonials = [
+    {
+      name: 'Marcus Rodriguez',
+      role: 'Car Enthusiast',
+      text: 'ARABA Coffee understands the art of precision. Every cup feels like shifting into the perfect gear.',
+      rating: 5
+    },
+    {
+      name: 'Sarah Chen',
+      role: 'Daily Commuter',
+      text: 'The drive-in experience is seamless. My morning fuel stop before hitting the road. Absolutely top-tier.',
+      rating: 5
+    },
+    {
+      name: 'David Thompson',
+      role: 'Coffee Connoisseur',
+      text: 'Engineering excellence in every espresso. This is what happens when passion for coffee meets automotive precision.',
+      rating: 5
     },
   ]
 
