@@ -132,6 +132,115 @@
   animation: drive-in 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
+/* Tire Track Pattern */
+@keyframes tire-track {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 0;
+  }
+}
+
+.tire-tracks {
+  animation: tire-track 2s linear infinite;
+}
+
+/* Engine Pulse */
+@keyframes engine-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.engine-pulse {
+  animation: engine-pulse 2s ease-in-out infinite;
+}
+
+/* Racing Stripe */
+@keyframes racing-stripe {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.racing-stripe {
+  animation: racing-stripe 3s ease-in-out infinite;
+}
+
+/* Speedometer Needle */
+@keyframes needle-swing {
+  0%, 100% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+}
+
+.speedometer-needle {
+  animation: needle-swing 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* Drift Effect */
+@keyframes drift {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(10px) rotate(2deg);
+  }
+  75% {
+    transform: translateX(-10px) rotate(-2deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+.drift-effect {
+  animation: drift 6s ease-in-out infinite;
+}
+
+/* Rev Engine */
+@keyframes rev-engine {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(181, 122, 75, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(181, 122, 75, 0.8);
+  }
+}
+
+.rev-engine {
+  animation: rev-engine 1.5s ease-in-out infinite;
+}
+
+/* Exhaust Smoke */
+@keyframes exhaust-smoke {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-50px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.exhaust-smoke {
+  animation: exhaust-smoke 3s ease-out infinite;
+}
+
 /* Glass Morphism Effect */
 .glass-effect {
   background: rgba(247, 243, 237, 0.7);
