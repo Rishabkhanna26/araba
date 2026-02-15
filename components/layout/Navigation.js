@@ -18,6 +18,7 @@ const Navigation = () => {
     { href: '/menu', label: 'Menu' },
     { href: '/experience', label: 'Drive-In' },
     { href: '/gallery', label: 'Gallery' },
+    { href: '/franchise', label: 'Franchise' },
     { href: '/contact', label: 'Contact' },
   ]
 

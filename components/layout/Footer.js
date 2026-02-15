@@ -85,7 +85,7 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 text-araba-beige">
               <li><a href="#" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Careers</a></li>
-              <li><a href="#" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Franchise</a></li>
+              <li><Link href="/franchise" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Franchise</Link></li>
               <li><a href="#" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Press Kit</a></li>
               <li><a href="#" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Newsletter</a></li>
             </ul>

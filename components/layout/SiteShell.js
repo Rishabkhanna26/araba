@@ -3,7 +3,7 @@ import Footer from '@/components/layout/Footer'
 
 const SiteShell = ({ children, className = '' }) => {
   return (
-    <div className={`min-h-screen ${className}`.trim()}>
+    <div className={`min-h-screen overflow-x-hidden ${className}`.trim()}>
       <Navigation />
       {children}
       <Footer />

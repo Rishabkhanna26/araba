@@ -493,7 +493,7 @@ const App = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[220px] sm:auto-rows-[240px]">
             {galleryImages.map((image, index) => (
               <motion.div
                 key={index}
@@ -503,15 +503,16 @@ const App = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, zIndex: 10 }}
                 className={`relative overflow-hidden rounded-2xl shadow-lg cursor-pointer ${
-                  index === 0 ? 'md:col-span-2 md:row-span-2' : ''
+                  index === 0 ? 'sm:col-span-2 md:col-span-2 md:row-span-2' : ''
                 }`}
               >
                 <img
                   src={image}
                   alt={`Gallery ${index + 1}`}
                   className={`w-full object-cover smooth-transition ${
-                    index === 0 ? 'h-full min-h-[400px]' : 'h-64'
+                    index === 0 ? 'h-full min-h-[320px] sm:min-h-[420px]' : 'h-full'
                   }`}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-araba-charcoal/70 to-transparent opacity-0 hover:opacity-100 smooth-transition flex items-end p-6">
                   <span className="text-white font-semibold text-lg">ARABA Collection</span>

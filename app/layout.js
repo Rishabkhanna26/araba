@@ -6,9 +6,9 @@ export const metadata = {
   description: 'Experience the perfect blend of luxury cafe atmosphere and automotive elegance. Premium artisanal coffee crafted with precision.',
   keywords: 'premium coffee, artisanal cafe, ARABA Coffee, luxury coffee experience',
   icons: {
-    icon: '/580649185_17850873852585947_4178974893598830815_n.jpg',
-    shortcut: '/580649185_17850873852585947_4178974893598830815_n.jpg',
-    apple: '/580649185_17850873852585947_4178974893598830815_n.jpg',
+    icon: '/580649185_17850873852585947_4178974893598830815_n.webp',
+    shortcut: '/580649185_17850873852585947_4178974893598830815_n.webp',
+    apple: '/580649185_17850873852585947_4178974893598830815_n.webp',
   },
 }
 

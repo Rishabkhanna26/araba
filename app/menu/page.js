@@ -1,157 +1,275 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Gauge, Fuel, Coffee, Zap } from 'lucide-react'
-import { Card } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
+import { Coffee, CupSoda, Leaf, Sandwich } from 'lucide-react'
 import SiteShell from '@/components/layout/SiteShell'
 
-const MenuPage = () => {
-  const menuCategories = [
-    {
-      category: 'Turbo Series',
-      icon: <Zap className="w-8 h-8" />,
-      description: 'High-octane espresso-based performance drinks',
-      items: [
-        { name: 'Turbo Espresso', description: 'Single origin, maximum acceleration', price: '₹4.50', hp: '200 HP', image: '/images/espresso.jpg' },
-        { name: 'Double Turbo Shot', description: 'Double the power, double the precision', price: '₹6.00', hp: '400 HP', image: '/images/espresso.jpg' },
-        { name: 'Turbo Americano', description: 'Extended range for the long haul', price: '₹5.00', hp: '250 HP', image: '/images/espresso.jpg' },
-      ]
-    },
-    {
-      category: 'Luxury Cruiser Line',
-      icon: <Gauge className="w-8 h-8" />,
-      description: 'Smooth, refined milk-based masterpieces',
-      items: [
-        { name: 'Velvet Cappuccino', description: 'Smooth as a luxury ride', price: '₹5.50', hp: '150 HP', image: '/images/latte-art.jpg' },
-        { name: 'ARABA Signature Latte', description: 'Our flagship blend', price: '₹5.00', hp: '180 HP', image: '/images/cappuccino.jpg' },
-        { name: 'Caramel Macchiato GT', description: 'Sweet power for grand touring', price: '₹6.00', hp: '200 HP', image: '/images/latte-art.jpg' },
-        { name: 'Mocha Supercharged', description: 'Chocolate boost for extra power', price: '₹6.50', hp: '220 HP', image: '/images/cappuccino.jpg' },
-      ]
-    },
-    {
-      category: 'Cold Press Highway',
-      icon: <Coffee className="w-8 h-8" />,
-      description: 'Refreshing cold brews for the open road',
-      items: [
-        { name: 'Cold Brew Cruiser', description: 'Smooth, cold-pressed energy', price: '₹6.00', hp: '220 HP', image: '/images/cold-brew.jpg' },
-        { name: 'Nitro Cold Brew', description: 'Nitrogen-injected performance', price: '₹7.00', hp: '300 HP', image: '/images/cold-brew.jpg' },
-        { name: 'Iced Latte Roadster', description: 'Convertible top-down refreshment', price: '₹5.50', hp: '180 HP', image: '/images/cold-brew.jpg' },
-      ]
-    },
-    {
-      category: 'Specialty Pit Stops',
-      icon: <Fuel className="w-8 h-8" />,
-      description: 'Unique blends for the adventurous driver',
-      items: [
-        { name: 'Affogato Racing Edition', description: 'Espresso meets gelato on the track', price: '₹7.50', hp: '250 HP', image: '/images/espresso.jpg' },
-        { name: 'Cortado Compact', description: 'Small but mighty performance', price: '₹4.00', hp: '160 HP', image: '/images/espresso.jpg' },
-        { name: 'Flat White Formula', description: 'Australian precision engineering', price: '₹5.50', hp: '190 HP', image: '/images/latte-art.jpg' },
-      ]
-    },
-  ]
+const foodColumns = [
+  {
+    title: 'Matcha',
+    priceMode: 'single',
+    items: [
+      { name: 'Iced Matcha', p1: '220' },
+      { name: 'Strawberry Iced Matcha', p1: '240' },
+      { name: 'Mango Iced Matcha', p1: '240' },
+      { name: 'Vanilla Iced Matcha', p1: '240' },
+    ],
+  },
+  {
+    title: 'Frappe',
+    priceMode: 'single',
+    items: [
+      { name: 'Daily Frappe', p1: '180' },
+      { name: 'Araba Spl', p1: '220' },
+      { name: 'Dark Choco Mocha', p1: '220' },
+      { name: 'Caramel', p1: '220' },
+    ],
+  },
+  {
+    title: 'Burgers',
+    priceMode: 'dual',
+    items: [
+      { name: 'Aloo Masala Burger', p1: '150' },
+      { name: 'Achari Punch', p1: '160', p2: '180' },
+      { name: 'Smoky Kebab Burger', p2: '200' },
+      { name: 'Jamaican Fire Burger', p1: '180', p2: '200' },
+      { name: 'Chicken Masala Burger', p2: '260' },
+      { name: 'Charcoal Grill Burger', p1: '240', p2: '260' },
+      { name: 'Mushroom Burger' },
+    ],
+  },
+  {
+    title: 'Bakery',
+    priceMode: 'single',
+    items: [
+      { name: 'Marble Cake', p1: '165' },
+      { name: 'Carrot Cake', p1: '165' },
+      { name: 'Tres-Leches', p1: '200' },
+      { name: 'Blueberry Muffin', p1: '150' },
+      { name: 'Chocolate Muffin', p1: '150' },
+      { name: 'Japanese Cotton Cheesecake', p1: '200' },
+      { name: 'Baked New York Cheesecake', p1: '200' },
+      { name: 'Baked Chocolate Cheesecake', p1: '200' },
+    ],
+  },
+  {
+    title: 'Healthy',
+    priceMode: 'dual',
+    items: [
+      { name: 'Charcoal Grill Chicken / Paneer with Sauteed Vegetables', p1: '320', p2: '340' },
+      { name: 'Grilled Paneer / Chicken Salad with Honey Mustard Dressing', p1: '320', p2: '340' },
+      { name: 'Egg Bliss', p2: '280' },
+      { name: 'Chicken / Paneer Fajita Bowl', p1: '320', p2: '340' },
+    ],
+  },
+  {
+    title: 'Fries & Fillers',
+    priceMode: 'dual',
+    items: [
+      { name: 'Classic Salted Fries', p1: '180' },
+      { name: 'Peri Peri Fries', p1: '220' },
+      { name: 'Mexican Masala Fries', p1: '220' },
+      { name: 'Sour Cream & Onion Fries', p1: '250' },
+      { name: 'Mozzarella Cheese Sticks', p1: '250' },
+      { name: 'Crispy Chicken Fries', p1: '280' },
+      { name: 'Veg Nuggets', p1: '240' },
+      { name: 'Korean BBQ Chicken Wings', p1: '260' },
+    ],
+  },
+]
+
+const beverageColumns = [
+  {
+    title: 'Coffee Is Kaafi (Hot / Iced)',
+    items: [
+      { name: 'Espresso', p1: '120' },
+      { name: 'Americano', p1: '140' },
+      { name: 'Macchiato', p1: '140' },
+      { name: 'Cortado', p1: '150' },
+      { name: 'Cappuccino', p1: '160' },
+      { name: 'Latte', p1: '180' },
+      { name: 'Mocha', p1: '200' },
+      { name: 'Midnight Mocha', p1: '220' },
+    ],
+  },
+  {
+    title: 'Shakes - Classics',
+    items: [
+      { name: 'Blueberry', p1: '200' },
+      { name: 'Rasmalai', p1: '200' },
+      { name: 'Tuti Fruti', p1: '200' },
+      { name: 'Rose Elaichi Mango', p1: '200' },
+      { name: 'Butter Scotch', p1: '200' },
+    ],
+  },
+  {
+    title: 'Iced Tea',
+    items: [
+      { name: 'Yuzu Zest', p1: '180' },
+      { name: 'Peach Meadow', p1: '180' },
+      { name: 'Lemon Lift', p1: '200' },
+      { name: 'Melon Mist', p1: '200' },
+    ],
+  },
+  {
+    title: 'Shakes - Chocolate Indulgence',
+    items: [
+      { name: 'Oreo', p1: '180' },
+      { name: 'KitKat', p1: '180' },
+      { name: 'Choco Peanut', p1: '200' },
+      { name: 'Choco Hazelnut', p1: '200' },
+    ],
+  },
+  {
+    title: 'Smoothies',
+    items: [
+      { name: 'Mango Smoothie', p1: '180' },
+      { name: 'Mix Berry Smoothie', p1: '200' },
+    ],
+  },
+  {
+    title: 'Mojito',
+    items: [
+      { name: 'Lemon Fresh', p1: '200' },
+      { name: 'Guava Glow', p1: '200' },
+      { name: 'Tropical Trio', p1: '200' },
+      { name: 'Citrus Zen', p1: '200' },
+    ],
+  },
+  {
+    title: 'Hot Chocolate',
+    items: [
+      { name: 'Single Chocolate', p1: '180' },
+      { name: 'Belgian', p1: '200' },
+      { name: 'Hazelnut', p1: '200' },
+    ],
+  },
+]
+
+function PriceHead({ dual = false, dark = false }) {
+  const diamondClass = `inline-flex h-7 w-7 sm:h-8 sm:w-8 rotate-45 items-center justify-center border ${
+    dark ? 'border-araba-cream/70 bg-araba-cream text-araba-olive' : 'border-araba-olive/50 bg-araba-olive text-araba-cream'
+  }`
 
   return (
-    <SiteShell className="bg-araba-beige">
+    <div className="flex shrink-0 items-center justify-end gap-4 sm:gap-8 uppercase">
+      <span className={diamondClass}>
+        <span className="-rotate-45 text-[8px] sm:text-[9px] leading-none tracking-[0.08em] whitespace-nowrap">Price</span>
+      </span>
+      {dual && (
+        <span className={diamondClass}>
+          <span className="-rotate-45 text-[6.5px] sm:text-[7px] leading-none tracking-[0.02em] whitespace-nowrap">N-Veg</span>
+        </span>
+      )}
+    </div>
+  )
+}
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-araba-copper to-araba-olive text-araba-cream overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="road-grid" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-                <line x1="50" y1="0" x2="50" y2="100" stroke="white" strokeWidth="1"/>
-                <line x1="0" y1="50" x2="100" y2="50" stroke="white" strokeWidth="1"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#road-grid)" />
-          </svg>
-        </div>
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
+function MenuBlock({ title, items, dual = false, dark = false }) {
+  return (
+    <div>
+      <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+        <h3 className={`text-2xl sm:text-3xl font-bold uppercase leading-tight ${dark ? 'text-araba-cream' : 'text-araba-olive'}`}>
+          {title}
+        </h3>
+        <PriceHead dual={dual} dark={dark} />
+      </div>
+      <div className="space-y-2">
+        {items.map((item) => (
+          <div
+            key={item.name}
+            className={`grid gap-2 text-sm sm:text-base ${dual ? 'grid-cols-[minmax(0,1fr)_48px_48px] sm:grid-cols-[minmax(0,1fr)_56px_56px]' : 'grid-cols-[minmax(0,1fr)_48px] sm:grid-cols-[minmax(0,1fr)_56px]'} ${dark ? 'text-araba-cream/95' : 'text-araba-charcoal'}`}
           >
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <Gauge className="w-10 h-10 text-araba-cream" />
-              <span className="text-araba-cream font-semibold text-lg tracking-widest uppercase">Performance Lineup</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6">Our Menu
-              <br />
-              <span className="text-araba-beige">Engineered for Performance</span>
-            </h1>
-            <p className="text-xl text-araba-beige leading-relaxed">
-              Every drink calibrated for maximum flavor and energy output. Choose your fuel.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Menu Categories */}
-      {menuCategories.map((category, catIndex) => (
-        <section key={catIndex} className={`py-14 sm:py-16 md:py-20 ${catIndex % 2 === 0 ? 'bg-araba-cream' : 'bg-araba-beige'}`}>
-          <div className="container mx-auto px-4 sm:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <div className="flex items-center justify-center gap-3 mb-4 text-araba-copper">
-                {category.icon}
-                <h2 className="text-3xl sm:text-4xl font-bold text-araba-olive">{category.category}</h2>
-              </div>
-              <p className="text-lg text-araba-charcoal max-w-2xl mx-auto">{category.description}</p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {category.items.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -10 }}
-                  className="group"
-                >
-                  <Card className="overflow-hidden border-none shadow-lg hover:shadow-2xl smooth-transition bg-white">
-                    <div className="relative h-56 overflow-hidden">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-full h-full object-cover group-hover:scale-110 smooth-transition"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-araba-charcoal/60 to-transparent opacity-0 group-hover:opacity-100 smooth-transition"></div>
-                      <div className="absolute top-4 right-4 bg-araba-copper text-white px-4 py-2 rounded-full font-bold shadow-lg">
-                        {item.price}
-                      </div>
-                      <div className="absolute bottom-4 left-4 bg-araba-olive text-araba-cream px-3 py-1 rounded-lg text-sm font-bold flex items-center gap-2 opacity-0 group-hover:opacity-100 smooth-transition">
-                        <Gauge className="w-4 h-4" />
-                        {item.hp}
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-araba-olive mb-2 group-hover:text-araba-copper smooth-transition">{item.name}</h3>
-                      <p className="text-araba-charcoal mb-4 text-sm">{item.description}</p>
-                      <Button className="w-full bg-araba-olive hover:bg-araba-copper smooth-transition">
-                        <Fuel className="mr-2 w-4 h-4" />
-                        Add to Order
-                      </Button>
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
+            <p className="min-w-0 pr-2 sm:pr-3 leading-snug break-words">{item.name}</p>
+            <p className="text-right">{item.p1 ?? ''}</p>
+            {dual && <p className="text-right">{item.p2 ?? ''}</p>}
           </div>
-        </section>
-      ))}
+        ))}
+      </div>
+    </div>
+  )
+}
 
+const MenuPage = () => {
+  return (
+    <SiteShell className="bg-araba-charcoal">
+      <main className="pt-24 pb-16">
+        <section className="mx-auto max-w-6xl px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45 }}
+            className="overflow-hidden rounded-2xl border border-araba-olive/30 bg-araba-beige"
+          >
+            <div className="border-b border-araba-olive/20 px-6 py-6 text-center">
+              <p className="text-xs uppercase tracking-[0.24em] text-araba-olive/70">ARABA Coffee</p>
+              <h1 className="mt-2 text-5xl font-bold text-araba-olive sm:text-6xl">Food Menu</h1>
+            </div>
+
+            <div className="grid gap-10 px-6 py-8 md:grid-cols-2">
+              <MenuBlock title={foodColumns[0].title} items={foodColumns[0].items} />
+              <MenuBlock title={foodColumns[1].title} items={foodColumns[1].items} />
+              <MenuBlock title={foodColumns[2].title} items={foodColumns[2].items} dual />
+              <MenuBlock title={foodColumns[3].title} items={foodColumns[3].items} />
+            </div>
+
+            <div className="grid items-start gap-10 border-t border-araba-olive/20 px-6 py-8 md:grid-cols-2">
+              <div>
+                <MenuBlock title={foodColumns[4].title} items={foodColumns[4].items} dual />
+                <div className="mt-6 flex items-center gap-3 text-araba-olive/70">
+                  <Leaf className="h-6 w-6" />
+                  <p className="text-sm">Veg and non-veg columns follow the poster style.</p>
+                </div>
+              </div>
+              <div>
+                <MenuBlock title={foodColumns[5].title} items={foodColumns[5].items} dual />
+                <div className="mt-8 rounded-xl border border-araba-olive/20 bg-araba-cream/70 p-6 text-araba-olive">
+                  <div className="mb-3 flex items-center gap-3">
+                    <Sandwich className="h-7 w-7" />
+                    <p className="text-lg font-semibold">Chef Signature Burgers</p>
+                  </div>
+                  <p className="text-sm leading-relaxed">
+                    Fresh patties, toasted buns, and in-house sauces made daily for the same handcrafted feel shown in your poster.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+        <section className="mx-auto mt-10 max-w-6xl px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45 }}
+            className="overflow-hidden rounded-2xl border border-araba-cream/20 bg-araba-olive"
+          >
+            <div className="border-b border-araba-cream/20 px-6 py-6 text-center">
+              <h2 className="text-5xl font-bold text-araba-cream sm:text-6xl">Beverages</h2>
+            </div>
+
+            <div className="grid gap-10 px-6 py-8 md:grid-cols-2">
+              <MenuBlock title={beverageColumns[0].title} items={beverageColumns[0].items} dark />
+              <MenuBlock title={beverageColumns[1].title} items={beverageColumns[1].items} dark />
+              <MenuBlock title={beverageColumns[2].title} items={beverageColumns[2].items} dark />
+              <MenuBlock title={beverageColumns[3].title} items={beverageColumns[3].items} dark />
+              <MenuBlock title={beverageColumns[6].title} items={beverageColumns[6].items} dark />
+              <div className="space-y-8">
+                <MenuBlock title={beverageColumns[4].title} items={beverageColumns[4].items} dark />
+                <MenuBlock title={beverageColumns[5].title} items={beverageColumns[5].items} dark />
+                <div className="flex items-center gap-4 rounded-xl border border-araba-cream/25 bg-araba-cream/10 p-4 text-araba-cream/90">
+                  <Coffee className="h-8 w-8 shrink-0" />
+                  <CupSoda className="h-8 w-8 shrink-0" />
+                  <p className="text-sm">Built to match your beverage poster look with deep olive background and cream typography.</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+      </main>
     </SiteShell>
   )
 }
 
 export default MenuPage
-

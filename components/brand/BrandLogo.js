@@ -5,7 +5,7 @@ const BrandLogo = ({ className = '', imageClassName = '', textClassName = '', sh
   return (
     <Link href="/" className={`inline-flex items-center gap-2.5 whitespace-nowrap ${className}`.trim()}>
       <Image
-        src="/580649185_17850873852585947_4178974893598830815_n.jpg"
+        src="/580649185_17850873852585947_4178974893598830815_n.webp"
         alt="ARABA Coffee logo"
         width={44}
         height={44}

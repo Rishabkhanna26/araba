@@ -58,7 +58,8 @@ const ExperiencePage = () => {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-araba-olive text-araba-cream overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-araba-charcoal/30 to-araba-olive/10" />
+        <div className="absolute inset-0 opacity-20">
           <svg className="w-full h-full" preserveAspectRatio="none">
             <path d="M0,100 Q400,50 800,100 T1600,100" stroke="#F7F3ED" strokeWidth="3" fill="none" strokeDasharray="20,10"/>
             <path d="M0,200 Q400,150 800,200 T1600,200" stroke="#F7F3ED" strokeWidth="3" fill="none" strokeDasharray="20,10"/>
@@ -74,13 +75,13 @@ const ExperiencePage = () => {
           >
             <div className="flex items-center justify-center gap-3 mb-6">
               <Zap className="w-10 h-10 text-araba-copper" />
-              <span className="text-araba-copper font-semibold text-lg tracking-widest uppercase">Fast Lane Service</span>
+              <span className="text-araba-cream font-semibold text-lg tracking-widest uppercase">Fast Lane Service</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6">Drive-In
               <br />
-              <span className="text-araba-copper">Coffee Experience</span>
+              <span className="text-araba-cream">Coffee Experience</span>
             </h1>
-            <p className="text-xl text-araba-beige leading-relaxed mb-8">
+            <p className="text-xl text-araba-cream leading-relaxed mb-8 max-w-3xl mx-auto">
               The perfect pit stop for drivers on the move. Premium coffee with Formula 1 speed.
             </p>
             <Button size="lg" className="bg-araba-copper hover:bg-araba-cream hover:text-araba-olive text-white text-lg px-10 py-7 rounded-full">
