@@ -116,14 +116,16 @@ const App = () => {
         className="relative h-screen flex items-center justify-center overflow-hidden"
       >
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-araba-charcoal/70 to-araba-olive/40 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-araba-charcoal/80 to-araba-olive/50 z-10"></div>
           <img
             src="https://images.unsplash.com/photo-1680946496238-5272d3c407fc"
             alt="Premium Café Interior"
             className="w-full h-full object-cover"
           />
-          <div className="light-streak" style={{ animationDelay: '0s' }}></div>
-          <div className="light-streak" style={{ animationDelay: '1.5s' }}></div>
+          {/* Floating Light Trails */}
+          <div className="light-streak" style={{ animationDelay: '0s', top: '20%' }}></div>
+          <div className="light-streak" style={{ animationDelay: '1.5s', top: '50%' }}></div>
+          <div className="light-streak" style={{ animationDelay: '3s', top: '70%' }}></div>
         </div>
         
         <div className="container mx-auto px-6 z-20 text-center">
@@ -132,23 +134,38 @@ const App = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-6xl md:text-8xl font-bold text-araba-cream mb-6 tracking-tight">
-              Where Coffee
-              <br />
-              <span className="text-araba-copper">Meets Motion</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-araba-beige mb-8 max-w-2xl mx-auto">
-              Experience the precision of automotive engineering in every cup
-            </p>
+            {/* Gear Icon Decoration */}
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              initial={{ rotate: 0 }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="w-20 h-20 mx-auto mb-6 opacity-40"
             >
-              <Button size="lg" className="bg-araba-copper hover:bg-araba-olive text-white text-lg px-8 py-6 rounded-full smooth-transition">
-                Explore Our Craft
-                <ChevronRight className="ml-2" />
-              </Button>
+              <Gauge className="w-full h-full text-araba-copper" />
             </motion.div>
+            
+            <h1 className="text-6xl md:text-8xl font-bold text-araba-cream mb-6 tracking-tight leading-tight">
+              Crafted Coffee.
+              <br />
+              <span className="text-araba-copper">Smooth Like a Drive.</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-araba-beige mb-10 max-w-3xl mx-auto leading-relaxed">
+              Where precision engineering meets artisan coffee. Every cup calibrated for the perfect journey.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button size="lg" className="bg-araba-copper hover:bg-araba-olive text-white text-lg px-10 py-7 rounded-full smooth-transition shadow-2xl">
+                  <Coffee className="mr-2" />
+                  View Menu
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button size="lg" variant="outline" className="bg-transparent border-2 border-araba-cream text-araba-cream hover:bg-araba-cream hover:text-araba-olive text-lg px-10 py-7 rounded-full smooth-transition">
+                  <Navigation className="mr-2" />
+                  Visit Us
+                </Button>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
 
