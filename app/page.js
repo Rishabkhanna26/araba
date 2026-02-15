@@ -122,16 +122,20 @@ const App = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" className="bg-araba-copper hover:bg-araba-olive text-white text-lg px-10 py-7 rounded-full smooth-transition shadow-2xl">
-                  <Coffee className="mr-2" />
-                  View Menu
-                </Button>
+                <Link href="/menu">
+                  <Button size="lg" className="bg-araba-copper hover:bg-araba-olive text-white text-lg px-10 py-7 rounded-full smooth-transition shadow-2xl">
+                    <Coffee className="mr-2" />
+                    View Menu
+                  </Button>
+                </Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" variant="outline" className="bg-transparent border-2 border-araba-cream text-araba-cream hover:bg-araba-cream hover:text-araba-olive text-lg px-10 py-7 rounded-full smooth-transition">
-                  <Navigation className="mr-2" />
-                  Visit Us
-                </Button>
+                <Link href="/contact">
+                  <Button size="lg" variant="outline" className="bg-transparent border-2 border-araba-cream text-araba-cream hover:bg-araba-cream hover:text-araba-olive text-lg px-10 py-7 rounded-full smooth-transition">
+                    <NavIcon className="mr-2" />
+                    Visit Us
+                  </Button>
+                </Link>
               </motion.div>
             </div>
           </motion.div>
