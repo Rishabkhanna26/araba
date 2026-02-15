@@ -272,13 +272,16 @@ const App = () => {
       </section>
 
       {/* Coffee Menu Section */}
-      <section id="menu" className="py-24 bg-araba-cream relative">
-        {/* Flowing Lines Background */}
-        <div className="absolute inset-0 opacity-10">
+      <section id="menu" className="py-24 bg-araba-cream relative overflow-hidden">
+        {/* Road Lines Background */}
+        <div className="absolute inset-0 opacity-5">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,50 Q300,100 600,50 T1200,50" stroke="#4B6535" strokeWidth="2" fill="none" />
-            <path d="M0,150 Q300,200 600,150 T1200,150" stroke="#4B6535" strokeWidth="2" fill="none" />
-            <path d="M0,250 Q300,300 600,250 T1200,250" stroke="#4B6535" strokeWidth="2" fill="none" />
+            <defs>
+              <pattern id="road-lines" x="0" y="0" width="200" height="100" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="50" x2="200" y2="50" stroke="#4B6535" strokeWidth="4" strokeDasharray="20,10"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#road-lines)" />
           </svg>
         </div>
 
@@ -289,13 +292,17 @@ const App = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Gauge className="w-8 h-8 text-araba-copper" />
+              <span className="text-araba-copper font-semibold text-sm tracking-widest uppercase">Performance Lineup</span>
+            </div>
             <h2 className="text-5xl font-bold text-araba-olive mb-4">Our Signature Blends</h2>
             <p className="text-lg text-araba-charcoal max-w-2xl mx-auto">
-              Each blend engineered for the perfect balance of flavor and aroma
+              Each blend engineered for maximum performance and unforgettable flavor
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {coffeeMenu.map((item, index) => (
               <motion.div
                 key={index}
@@ -303,23 +310,32 @@ const App = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -10 }}
+                className="group"
               >
-                <Card className="overflow-hidden border-none shadow-xl hover:shadow-2xl smooth-transition group">
+                <Card className="overflow-hidden border-none shadow-lg hover:shadow-2xl smooth-transition bg-white">
                   <div className="relative h-64 overflow-hidden">
                     <img
                       src={item.image}
                       alt={item.name}
                       className="w-full h-full object-cover group-hover:scale-110 smooth-transition"
                     />
-                    <div className="absolute top-4 right-4 bg-araba-copper text-white px-4 py-2 rounded-full font-bold">
+                    <div className="absolute inset-0 bg-gradient-to-t from-araba-charcoal/60 to-transparent opacity-0 group-hover:opacity-100 smooth-transition"></div>
+                    <div className="absolute top-4 right-4 bg-araba-copper text-white px-4 py-2 rounded-full font-bold shadow-lg">
                       {item.price}
                     </div>
+                    {/* Horsepower Badge */}
+                    <div className="absolute bottom-4 left-4 bg-araba-olive text-araba-cream px-3 py-1 rounded-lg text-sm font-bold flex items-center gap-2 opacity-0 group-hover:opacity-100 smooth-transition">
+                      <Gauge className="w-4 h-4" />
+                      {item.power}
+                    </div>
                   </div>
-                  <div className="p-6 bg-white">
-                    <h3 className="text-2xl font-bold text-araba-olive mb-2">{item.name}</h3>
-                    <p className="text-araba-charcoal">{item.description}</p>
-                    <Button className="w-full mt-4 bg-araba-olive hover:bg-araba-copper smooth-transition">
-                      Order Now
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-araba-olive mb-2 group-hover:text-araba-copper smooth-transition">{item.name}</h3>
+                    <p className="text-araba-charcoal mb-4">{item.description}</p>
+                    <Button className="w-full bg-araba-olive hover:bg-araba-copper smooth-transition group-hover:shadow-lg">
+                      <Fuel className="mr-2 w-4 h-4" />
+                      Fuel Up Now
                     </Button>
                   </div>
                 </Card>
