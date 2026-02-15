@@ -3,8 +3,7 @@
 import { motion } from 'framer-motion'
 import { Fuel, Gauge, Award, Users, TrendingUp, Coffee } from 'lucide-react'
 import { Card } from '@/components/ui/card'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
+import SiteShell from '@/components/layout/SiteShell'
 
 const AboutPage = () => {
   const team = [
@@ -49,8 +48,7 @@ const AboutPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-araba-beige">
-      <Navigation />
+    <SiteShell className="bg-araba-beige">
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-araba-olive to-araba-charcoal text-araba-cream overflow-hidden">
@@ -75,7 +73,7 @@ const AboutPage = () => {
               <Fuel className="w-10 h-10 text-araba-copper" />
               <span className="text-araba-copper font-semibold text-lg tracking-widest uppercase">Our Journey</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold mb-6">Where Coffee
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6">Where Coffee
               <br />
               <span className="text-araba-copper">Meets Engineering</span>
             </h1>
@@ -97,7 +95,7 @@ const AboutPage = () => {
               transition={{ duration: 0.8 }}
             >
               <img
-                src="https://images.unsplash.com/photo-1746040891289-68931e9ec409"
+                src="/images/barista-work.jpg"
                 alt="Coffee Preparation"
                 className="rounded-3xl shadow-2xl"
               />
@@ -243,8 +241,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <Footer />
-    </div>
+    </SiteShell>
   )
 }
 

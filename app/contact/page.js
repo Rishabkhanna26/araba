@@ -7,8 +7,7 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
+import SiteShell from '@/components/layout/SiteShell'
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -32,8 +31,7 @@ const ContactPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-araba-beige">
-      <Navigation />
+    <SiteShell className="bg-araba-beige">
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-araba-olive to-araba-copper text-araba-cream overflow-hidden">
@@ -59,7 +57,7 @@ const ContactPage = () => {
               <MapPin className="w-10 h-10 text-araba-cream" />
               <span className="text-araba-cream font-semibold text-lg tracking-widest uppercase">Find Your Pit Stop</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold mb-6">Get in Touch
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6">Get in Touch
               <br />
               <span className="text-araba-beige">Navigate to ARABA</span>
             </h1>
@@ -252,8 +250,7 @@ const ContactPage = () => {
         </div>
       </section>
 
-      <Footer />
-    </div>
+    </SiteShell>
   )
 }
 

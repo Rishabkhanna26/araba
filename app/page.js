@@ -5,8 +5,7 @@ import Link from 'next/link'
 import { Coffee, ChevronRight, Gauge, Fuel, Navigation as NavIcon, Star, Quote, MapPin, Clock, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
+import SiteShell from '@/components/layout/SiteShell'
 
 const App = () => {
   const { scrollYProgress } = useScroll()
@@ -18,39 +17,39 @@ const App = () => {
       name: 'Turbo Espresso',
       description: 'High-octane single shot. Precision-engineered for maximum acceleration.',
       price: '$4.50',
-      image: 'https://images.unsplash.com/photo-1765180850178-8912d7688395',
+      image: '/images/espresso.jpg',
       power: '200 HP'
     },
     {
       name: 'Velvet Cappuccino',
       description: 'Smooth as a luxury ride. Microfoam tuned to perfection.',
       price: '$5.50',
-      image: 'https://images.unsplash.com/photo-1770349694645-c0bcaf544740',
+      image: '/images/latte-art.jpg',
       power: '150 HP'
     },
     {
       name: 'ARABA Signature Latte',
       description: 'Our flagship blend. Caramel undertones for the long drive.',
       price: '$5.00',
-      image: 'https://images.unsplash.com/photo-1760687510983-68b5e2525bd4',
+      image: '/images/cappuccino.jpg',
       power: '180 HP'
     },
     {
       name: 'Cold Brew Cruiser',
       description: 'Smooth, cold-pressed energy. Perfect for highway cruising.',
       price: '$6.00',
-      image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7',
+      image: '/images/cold-brew.jpg',
       power: '220 HP'
     },
   ]
 
   const galleryImages = [
-    'https://images.unsplash.com/photo-1636928837218-f2b56d5a7861',
-    'https://images.unsplash.com/photo-1746040891289-68931e9ec409',
-    'https://images.unsplash.com/photo-1680946496238-5272d3c407fc',
-    'https://images.unsplash.com/photo-1770349694645-c0bcaf544740',
-    'https://images.unsplash.com/photo-1765180850178-8912d7688395',
-    'https://images.unsplash.com/photo-1760687510983-68b5e2525bd4',
+    '/images/cafe-interior.jpg',
+    '/images/barista-work.jpg',
+    '/images/premium-seating.jpg',
+    '/images/latte-art.jpg',
+    '/images/espresso.jpg',
+    '/images/cappuccino.jpg',
   ]
 
   const testimonials = [
@@ -75,18 +74,17 @@ const App = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-araba-beige overflow-hidden">
-      <Navigation />
+    <SiteShell className="bg-araba-beige overflow-hidden">
 
       {/* Hero Section */}
       <motion.section
         style={{ opacity, scale }}
-        className="relative h-screen flex items-center justify-center overflow-hidden"
+        className="hero-safe-top relative flex min-h-[100svh] items-center justify-center overflow-hidden"
       >
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-araba-charcoal/80 to-araba-olive/50 z-10"></div>
           <img
-            src="https://images.unsplash.com/photo-1680946496238-5272d3c407fc"
+            src="/images/premium-seating.jpg"
             alt="Premium Café Interior"
             className="w-full h-full object-cover"
           />
@@ -96,7 +94,7 @@ const App = () => {
           <div className="light-streak" style={{ animationDelay: '3s', top: '70%' }}></div>
         </div>
         
-        <div className="container mx-auto px-6 z-20 text-center">
+        <div className="container mx-auto px-4 sm:px-6 z-20 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -112,30 +110,30 @@ const App = () => {
               <Gauge className="w-full h-full text-araba-copper" />
             </motion.div>
             
-            <h1 className="text-6xl md:text-8xl font-bold text-araba-cream mb-6 tracking-tight leading-tight">
+            <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-araba-cream sm:text-5xl md:text-8xl">
               Crafted Coffee.
               <br />
-              <span className="text-araba-copper">Smooth Like a Drive.</span>
+              <span className="accent-italic text-araba-copper">Smooth Like a Drive.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-araba-beige mb-10 max-w-3xl mx-auto leading-relaxed">
+            <p className="mx-auto mb-10 max-w-3xl text-base leading-relaxed text-araba-beige sm:text-lg md:text-2xl">
               Where precision engineering meets artisan coffee. Every cup calibrated for the perfect journey.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center rounded-2xl bg-araba-charcoal/25 p-3 backdrop-blur-sm">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link href="/menu">
-                  <Button size="lg" className="bg-araba-copper hover:bg-araba-olive text-white text-lg px-10 py-7 rounded-full smooth-transition shadow-2xl">
+                <Button asChild size="lg" className="bg-araba-copper hover:bg-araba-olive text-white text-base sm:text-lg px-7 sm:px-10 py-6 sm:py-7 rounded-full smooth-transition shadow-2xl w-56 sm:w-auto">
+                  <Link href="/menu">
                     <Coffee className="mr-2" />
                     View Menu
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link href="/contact">
-                  <Button size="lg" variant="outline" className="bg-transparent border-2 border-araba-cream text-araba-cream hover:bg-araba-cream hover:text-araba-olive text-lg px-10 py-7 rounded-full smooth-transition">
+                <Button asChild size="lg" variant="outline" className="bg-araba-cream/95 border-2 border-araba-cream text-araba-olive hover:bg-araba-cream hover:text-araba-charcoal text-base sm:text-lg px-7 sm:px-10 py-6 sm:py-7 rounded-full smooth-transition shadow-2xl w-56 sm:w-auto">
+                  <Link href="/contact">
                     <NavIcon className="mr-2" />
                     Visit Us
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </motion.div>
             </div>
           </motion.div>
@@ -208,7 +206,7 @@ const App = () => {
               className="relative"
             >
               <img
-                src="https://images.unsplash.com/photo-1636928837218-f2b56d5a7861"
+                src="/images/cafe-interior.jpg"
                 alt="Café Ambiance"
                 className="rounded-3xl shadow-2xl"
               />
@@ -337,7 +335,7 @@ const App = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <Navigation className="w-8 h-8 text-araba-copper" />
+                <NavIcon className="w-8 h-8 text-araba-copper" />
                 <span className="text-araba-copper font-semibold text-sm tracking-widest uppercase">Fast Lane Service</span>
               </div>
               <h2 className="text-5xl font-bold mb-6">
@@ -658,7 +656,7 @@ const App = () => {
                 <h3 className="text-2xl font-bold text-araba-olive mb-2">Find Us Here</h3>
                 <p className="text-araba-charcoal mb-6">123 Premium Boulevard, Coffee District</p>
                 <Button className="bg-araba-copper hover:bg-araba-olive text-white">
-                  <Navigation className="mr-2" />
+                  <NavIcon className="mr-2" />
                   Get Directions
                 </Button>
               </div>
@@ -677,8 +675,7 @@ const App = () => {
         </div>
       </section>
 
-      <Footer />
-    </div>
+    </SiteShell>
   )
 }
 

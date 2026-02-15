@@ -4,8 +4,7 @@ import { motion } from 'framer-motion'
 import { Navigation as NavIcon, Clock, Smartphone, Coffee, Gauge, CheckCircle, Zap } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
+import SiteShell from '@/components/layout/SiteShell'
 
 const ExperiencePage = () => {
   const features = [
@@ -55,8 +54,7 @@ const ExperiencePage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-araba-beige">
-      <Navigation />
+    <SiteShell className="bg-araba-beige">
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-araba-olive text-araba-cream overflow-hidden">
@@ -78,7 +76,7 @@ const ExperiencePage = () => {
               <Zap className="w-10 h-10 text-araba-copper" />
               <span className="text-araba-copper font-semibold text-lg tracking-widest uppercase">Fast Lane Service</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold mb-6">Drive-In
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6">Drive-In
               <br />
               <span className="text-araba-copper">Coffee Experience</span>
             </h1>
@@ -233,8 +231,7 @@ const ExperiencePage = () => {
         </div>
       </section>
 
-      <Footer />
-    </div>
+    </SiteShell>
   )
 }
 

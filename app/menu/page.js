@@ -4,8 +4,7 @@ import { motion } from 'framer-motion'
 import { Gauge, Fuel, Coffee, Zap } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
+import SiteShell from '@/components/layout/SiteShell'
 
 const MenuPage = () => {
   const menuCategories = [
@@ -14,9 +13,9 @@ const MenuPage = () => {
       icon: <Zap className="w-8 h-8" />,
       description: 'High-octane espresso-based performance drinks',
       items: [
-        { name: 'Turbo Espresso', description: 'Single origin, maximum acceleration', price: '$4.50', hp: '200 HP', image: 'https://images.unsplash.com/photo-1765180850178-8912d7688395' },
-        { name: 'Double Turbo Shot', description: 'Double the power, double the precision', price: '$6.00', hp: '400 HP', image: 'https://images.unsplash.com/photo-1765180850178-8912d7688395' },
-        { name: 'Turbo Americano', description: 'Extended range for the long haul', price: '$5.00', hp: '250 HP', image: 'https://images.unsplash.com/photo-1765180850178-8912d7688395' },
+        { name: 'Turbo Espresso', description: 'Single origin, maximum acceleration', price: '$4.50', hp: '200 HP', image: '/images/espresso.jpg' },
+        { name: 'Double Turbo Shot', description: 'Double the power, double the precision', price: '$6.00', hp: '400 HP', image: '/images/espresso.jpg' },
+        { name: 'Turbo Americano', description: 'Extended range for the long haul', price: '$5.00', hp: '250 HP', image: '/images/espresso.jpg' },
       ]
     },
     {
@@ -24,10 +23,10 @@ const MenuPage = () => {
       icon: <Gauge className="w-8 h-8" />,
       description: 'Smooth, refined milk-based masterpieces',
       items: [
-        { name: 'Velvet Cappuccino', description: 'Smooth as a luxury ride', price: '$5.50', hp: '150 HP', image: 'https://images.unsplash.com/photo-1770349694645-c0bcaf544740' },
-        { name: 'ARABA Signature Latte', description: 'Our flagship blend', price: '$5.00', hp: '180 HP', image: 'https://images.unsplash.com/photo-1760687510983-68b5e2525bd4' },
-        { name: 'Caramel Macchiato GT', description: 'Sweet power for grand touring', price: '$6.00', hp: '200 HP', image: 'https://images.unsplash.com/photo-1770349694645-c0bcaf544740' },
-        { name: 'Mocha Supercharged', description: 'Chocolate boost for extra power', price: '$6.50', hp: '220 HP', image: 'https://images.unsplash.com/photo-1760687510983-68b5e2525bd4' },
+        { name: 'Velvet Cappuccino', description: 'Smooth as a luxury ride', price: '$5.50', hp: '150 HP', image: '/images/latte-art.jpg' },
+        { name: 'ARABA Signature Latte', description: 'Our flagship blend', price: '$5.00', hp: '180 HP', image: '/images/cappuccino.jpg' },
+        { name: 'Caramel Macchiato GT', description: 'Sweet power for grand touring', price: '$6.00', hp: '200 HP', image: '/images/latte-art.jpg' },
+        { name: 'Mocha Supercharged', description: 'Chocolate boost for extra power', price: '$6.50', hp: '220 HP', image: '/images/cappuccino.jpg' },
       ]
     },
     {
@@ -35,9 +34,9 @@ const MenuPage = () => {
       icon: <Coffee className="w-8 h-8" />,
       description: 'Refreshing cold brews for the open road',
       items: [
-        { name: 'Cold Brew Cruiser', description: 'Smooth, cold-pressed energy', price: '$6.00', hp: '220 HP', image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7' },
-        { name: 'Nitro Cold Brew', description: 'Nitrogen-injected performance', price: '$7.00', hp: '300 HP', image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7' },
-        { name: 'Iced Latte Roadster', description: 'Convertible top-down refreshment', price: '$5.50', hp: '180 HP', image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7' },
+        { name: 'Cold Brew Cruiser', description: 'Smooth, cold-pressed energy', price: '$6.00', hp: '220 HP', image: '/images/cold-brew.jpg' },
+        { name: 'Nitro Cold Brew', description: 'Nitrogen-injected performance', price: '$7.00', hp: '300 HP', image: '/images/cold-brew.jpg' },
+        { name: 'Iced Latte Roadster', description: 'Convertible top-down refreshment', price: '$5.50', hp: '180 HP', image: '/images/cold-brew.jpg' },
       ]
     },
     {
@@ -45,16 +44,15 @@ const MenuPage = () => {
       icon: <Fuel className="w-8 h-8" />,
       description: 'Unique blends for the adventurous driver',
       items: [
-        { name: 'Affogato Racing Edition', description: 'Espresso meets gelato on the track', price: '$7.50', hp: '250 HP', image: 'https://images.unsplash.com/photo-1765180850178-8912d7688395' },
-        { name: 'Cortado Compact', description: 'Small but mighty performance', price: '$4.00', hp: '160 HP', image: 'https://images.unsplash.com/photo-1765180850178-8912d7688395' },
-        { name: 'Flat White Formula', description: 'Australian precision engineering', price: '$5.50', hp: '190 HP', image: 'https://images.unsplash.com/photo-1770349694645-c0bcaf544740' },
+        { name: 'Affogato Racing Edition', description: 'Espresso meets gelato on the track', price: '$7.50', hp: '250 HP', image: '/images/espresso.jpg' },
+        { name: 'Cortado Compact', description: 'Small but mighty performance', price: '$4.00', hp: '160 HP', image: '/images/espresso.jpg' },
+        { name: 'Flat White Formula', description: 'Australian precision engineering', price: '$5.50', hp: '190 HP', image: '/images/latte-art.jpg' },
       ]
     },
   ]
 
   return (
-    <div className="min-h-screen bg-araba-beige">
-      <Navigation />
+    <SiteShell className="bg-araba-beige">
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-araba-copper to-araba-olive text-araba-cream overflow-hidden">
@@ -80,7 +78,7 @@ const MenuPage = () => {
               <Gauge className="w-10 h-10 text-araba-cream" />
               <span className="text-araba-cream font-semibold text-lg tracking-widest uppercase">Performance Lineup</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold mb-6">Our Menu
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6">Our Menu
               <br />
               <span className="text-araba-beige">Engineered for Performance</span>
             </h1>
@@ -151,8 +149,7 @@ const MenuPage = () => {
         </section>
       ))}
 
-      <Footer />
-    </div>
+    </SiteShell>
   )
 }
 
