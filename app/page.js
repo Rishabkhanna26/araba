@@ -1,24 +1,17 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
-import { Coffee, MapPin, Clock, Phone, Mail, ChevronRight, Circle, Gauge, Fuel, Navigation, Star, Quote, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import Link from 'next/link'
+import { Coffee, ChevronRight, Gauge, Fuel, Navigation as NavIcon, Star, Quote } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
+import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 
 const App = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
   const { scrollYProgress } = useScroll()
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95])
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const coffeeMenu = [
     {
