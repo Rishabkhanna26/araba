@@ -179,6 +179,13 @@ const App = () => {
 
       {/* About/Story Section */}
       <section id="about" className="py-24 bg-araba-beige relative">
+        {/* Top Curved Divider */}
+        <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-16">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-araba-beige"></path>
+          </svg>
+        </div>
+
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -187,32 +194,37 @@ const App = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
+              <div className="flex items-center gap-3 mb-4">
+                <Fuel className="w-8 h-8 text-araba-copper" />
+                <span className="text-araba-copper font-semibold text-sm tracking-widest uppercase">Fuel Your Journey</span>
+              </div>
               <h2 className="text-5xl font-bold text-araba-olive mb-6">
-                Crafted with
+                Engineered with
                 <br />
-                <span className="text-araba-copper">Precision</span>
+                <span className="text-araba-copper">Precision & Passion</span>
               </h2>
               <p className="text-lg text-araba-charcoal leading-relaxed mb-6">
                 Born from a passion for both premium coffee and automotive excellence, 
                 ARABA Coffee represents the perfect fusion of two worlds. Every cup is 
-                crafted with the same precision and attention to detail as a finely-tuned machine.
+                crafted with the same precision and attention to detail as a finely-tuned performance engine.
               </p>
               <p className="text-lg text-araba-charcoal leading-relaxed mb-8">
-                Our baristas approach each brew like master engineers, ensuring every 
-                extraction is perfectly calibrated, every pour artfully executed.
+                Our master baristas approach each brew like automotive engineers—calibrating 
+                extraction times, monitoring pressure gauges, and ensuring every pour is executed 
+                with mechanical precision. This is coffee at peak performance.
               </p>
-              <div className="flex gap-8">
-                <div>
-                  <div className="text-4xl font-bold text-araba-copper">10+</div>
-                  <div className="text-sm text-araba-charcoal">Years Experience</div>
+              <div className="grid grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-araba-copper mb-2">10+</div>
+                  <div className="text-sm text-araba-charcoal">Years on Track</div>
                 </div>
-                <div>
-                  <div className="text-4xl font-bold text-araba-copper">50K+</div>
-                  <div className="text-sm text-araba-charcoal">Happy Customers</div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-araba-copper mb-2">50K+</div>
+                  <div className="text-sm text-araba-charcoal">Miles Driven</div>
                 </div>
-                <div>
-                  <div className="text-4xl font-bold text-araba-copper">100%</div>
-                  <div className="text-sm text-araba-charcoal">Artisan Quality</div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-araba-copper mb-2">100%</div>
+                  <div className="text-sm text-araba-charcoal">Premium Grade</div>
                 </div>
               </div>
             </motion.div>
@@ -229,14 +241,14 @@ const App = () => {
                 className="rounded-3xl shadow-2xl"
               />
               {/* Speedometer-inspired Circle Overlay */}
-              <div className="absolute -bottom-8 -left-8 w-32 h-32">
+              <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-araba-cream rounded-full shadow-2xl p-4">
                 <svg viewBox="0 0 160 160" className="transform -rotate-90">
                   <circle
                     cx="80"
                     cy="80"
                     r="70"
-                    stroke="#F7F3ED"
-                    strokeWidth="8"
+                    stroke="#E8DFD4"
+                    strokeWidth="10"
                     fill="none"
                   />
                   <circle
@@ -244,11 +256,15 @@ const App = () => {
                     cy="80"
                     r="70"
                     stroke="#B57A4B"
-                    strokeWidth="8"
+                    strokeWidth="10"
                     fill="none"
                     className="gauge-circle"
                   />
                 </svg>
+                <div className="absolute inset-0 flex items-center justify-center flex-col">
+                  <Gauge className="w-8 h-8 text-araba-olive mb-1" />
+                  <span className="text-xs text-araba-charcoal font-bold">TOP SPEED</span>
+                </div>
               </div>
             </motion.div>
           </div>
