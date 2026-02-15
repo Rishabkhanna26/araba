@@ -16,28 +16,28 @@ const App = () => {
     {
       name: 'Turbo Espresso',
       description: 'High-octane single shot. Precision-engineered for maximum acceleration.',
-      price: '$4.50',
+      price: '₹4.50',
       image: '/images/espresso.jpg',
       power: '200 HP'
     },
     {
       name: 'Velvet Cappuccino',
       description: 'Smooth as a luxury ride. Microfoam tuned to perfection.',
-      price: '$5.50',
+      price: '₹5.50',
       image: '/images/latte-art.jpg',
       power: '150 HP'
     },
     {
       name: 'ARABA Signature Latte',
       description: 'Our flagship blend. Caramel undertones for the long drive.',
-      price: '$5.00',
+      price: '₹5.00',
       image: '/images/cappuccino.jpg',
       power: '180 HP'
     },
     {
       name: 'Cold Brew Cruiser',
       description: 'Smooth, cold-pressed energy. Perfect for highway cruising.',
-      price: '$6.00',
+      price: '₹6.00',
       image: '/images/cold-brew.jpg',
       power: '220 HP'
     },
@@ -85,7 +85,7 @@ const App = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-araba-charcoal/80 to-araba-olive/50 z-10"></div>
           <img
             src="/images/premium-seating.jpg"
-            alt="Premium Café Interior"
+            alt="Premium Cafe Interior"
             className="w-full h-full object-cover"
           />
           {/* Floating Light Trails */}
@@ -148,7 +148,7 @@ const App = () => {
       </motion.section>
 
       {/* About/Story Section */}
-      <section id="about" className="py-24 bg-araba-beige relative">
+      <section id="about" className="py-16 sm:py-20 md:py-24 bg-araba-beige relative">
         {/* Top Curved Divider */}
         <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-16">
@@ -156,7 +156,7 @@ const App = () => {
           </svg>
         </div>
 
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -168,7 +168,7 @@ const App = () => {
                 <Fuel className="w-8 h-8 text-araba-copper" />
                 <span className="text-araba-copper font-semibold text-sm tracking-widest uppercase">Fuel Your Journey</span>
               </div>
-              <h2 className="text-5xl font-bold text-araba-olive mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-araba-olive mb-6">
                 Engineered with
                 <br />
                 <span className="text-araba-copper">Precision & Passion</span>
@@ -179,11 +179,11 @@ const App = () => {
                 crafted with the same precision and attention to detail as a finely-tuned performance engine.
               </p>
               <p className="text-lg text-araba-charcoal leading-relaxed mb-8">
-                Our master baristas approach each brew like automotive engineers—calibrating 
+                Our master baristas approach each brew like automotive engineers-calibrating 
                 extraction times, monitoring pressure gauges, and ensuring every pour is executed 
                 with mechanical precision. This is coffee at peak performance.
               </p>
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="text-4xl font-bold text-araba-copper mb-2">10+</div>
                   <div className="text-sm text-araba-charcoal">Years on Track</div>
@@ -207,7 +207,7 @@ const App = () => {
             >
               <img
                 src="/images/cafe-interior.jpg"
-                alt="Café Ambiance"
+                alt="Cafe Ambiance"
                 className="rounded-3xl shadow-2xl"
               />
               {/* Speedometer-inspired Circle Overlay */}
@@ -242,7 +242,7 @@ const App = () => {
       </section>
 
       {/* Coffee Menu Section */}
-      <section id="menu" className="py-24 bg-araba-cream relative overflow-hidden">
+      <section id="menu" className="py-16 sm:py-20 md:py-24 bg-araba-cream relative overflow-hidden">
         {/* Road Lines Background */}
         <div className="absolute inset-0 opacity-5">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -255,7 +255,7 @@ const App = () => {
           </svg>
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -266,7 +266,7 @@ const App = () => {
               <Gauge className="w-8 h-8 text-araba-copper" />
               <span className="text-araba-copper font-semibold text-sm tracking-widest uppercase">Performance Lineup</span>
             </div>
-            <h2 className="text-5xl font-bold text-araba-olive mb-4">Our Signature Blends</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-araba-olive mb-4">Our Signature Blends</h2>
             <p className="text-lg text-araba-charcoal max-w-2xl mx-auto">
               Each blend engineered for maximum performance and unforgettable flavor
             </p>
@@ -316,7 +316,7 @@ const App = () => {
       </section>
 
       {/* Drive-In Experience Section */}
-      <section id="experience" className="py-24 bg-araba-olive text-araba-cream relative overflow-hidden">
+      <section id="experience" className="py-16 sm:py-20 md:py-24 bg-araba-olive text-araba-cream relative overflow-hidden">
         {/* Road Line Graphics */}
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" preserveAspectRatio="none">
@@ -326,7 +326,7 @@ const App = () => {
           </svg>
         </div>
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -338,7 +338,7 @@ const App = () => {
                 <NavIcon className="w-8 h-8 text-araba-copper" />
                 <span className="text-araba-copper font-semibold text-sm tracking-widest uppercase">Fast Lane Service</span>
               </div>
-              <h2 className="text-5xl font-bold mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
                 Drive-In Coffee
                 <br />
                 <span className="text-araba-copper">Experience</span>
@@ -346,7 +346,7 @@ const App = () => {
               <p className="text-lg leading-relaxed mb-6">
                 The perfect pit stop for coffee enthusiasts on the move. Our drive-in 
                 service delivers premium coffee with the speed and efficiency of a 
-                Formula 1 pit crew—without compromising on quality.
+                Formula 1 pit crew-without compromising on quality.
               </p>
               <p className="text-lg leading-relaxed mb-8">
                 Order ahead, drive through, and experience seamless service. Your coffee 
@@ -475,8 +475,8 @@ const App = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-24 bg-araba-beige">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-20 md:py-24 bg-araba-beige">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -487,9 +487,9 @@ const App = () => {
               <Coffee className="w-8 h-8 text-araba-copper" />
               <span className="text-araba-copper font-semibold text-sm tracking-widest uppercase">Visual Journey</span>
             </div>
-            <h2 className="text-5xl font-bold text-araba-olive mb-4">Gallery</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-araba-olive mb-4">Gallery</h2>
             <p className="text-lg text-araba-charcoal max-w-2xl mx-auto">
-              Take a visual drive through our café experience
+              Take a visual drive through our Cafe experience
             </p>
           </motion.div>
 
@@ -523,8 +523,8 @@ const App = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-araba-cream">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-20 md:py-24 bg-araba-cream">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -535,7 +535,7 @@ const App = () => {
               <Star className="w-8 h-8 text-araba-copper fill-araba-copper" />
               <span className="text-araba-copper font-semibold text-sm tracking-widest uppercase">Driver Reviews</span>
             </div>
-            <h2 className="text-5xl font-bold text-araba-olive mb-4">What Our Drivers Say</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-araba-olive mb-4">What Our Drivers Say</h2>
             <p className="text-lg text-araba-charcoal max-w-2xl mx-auto">
               Real feedback from coffee enthusiasts on the fast lane
             </p>
@@ -577,8 +577,8 @@ const App = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-araba-beige">
-        <div className="container mx-auto px-6">
+      <section id="contact" className="py-16 sm:py-20 md:py-24 bg-araba-beige">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -589,7 +589,7 @@ const App = () => {
               <MapPin className="w-8 h-8 text-araba-copper" />
               <span className="text-araba-copper font-semibold text-sm tracking-widest uppercase">Find Your Pit Stop</span>
             </div>
-            <h2 className="text-5xl font-bold text-araba-olive mb-4">Visit Our Station</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-araba-olive mb-4">Visit Our Station</h2>
             <p className="text-lg text-araba-charcoal max-w-2xl mx-auto">
               Navigate to ARABA Coffee and experience the drive
             </p>
@@ -647,7 +647,7 @@ const App = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="rounded-3xl overflow-hidden shadow-2xl h-96 bg-araba-cream relative"
+            className="rounded-3xl overflow-hidden shadow-2xl h-[22rem] sm:h-96 bg-araba-cream relative"
           >
             {/* Map Placeholder with Road Pattern */}
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-araba-beige to-araba-cream">
@@ -680,3 +680,5 @@ const App = () => {
 }
 
 export default App
+
+

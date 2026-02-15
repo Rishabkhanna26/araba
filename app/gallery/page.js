@@ -32,7 +32,7 @@ const GalleryPage = () => {
             <rect width="100%" height="100%" fill="url(#camera-pattern)" />
           </svg>
         </div>
-        <div className="container relative z-10 mx-auto px-6">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ const GalleryPage = () => {
         </div>
       </section>
 
-      <section className="bg-araba-beige py-20">
+      <section className="bg-araba-beige py-14 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid gap-6 lg:grid-cols-12">
             <motion.article
@@ -121,8 +121,8 @@ const GalleryPage = () => {
         </div>
       </section>
 
-      <section className="bg-araba-cream py-20">
-        <div className="container mx-auto px-6">
+      <section className="bg-araba-cream py-14 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="grid gap-8 text-center md:grid-cols-3">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <Coffee className="mx-auto mb-4 h-16 w-16 text-araba-copper" />
@@ -147,3 +147,4 @@ const GalleryPage = () => {
 }
 
 export default GalleryPage
+

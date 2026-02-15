@@ -13,9 +13,9 @@ const MenuPage = () => {
       icon: <Zap className="w-8 h-8" />,
       description: 'High-octane espresso-based performance drinks',
       items: [
-        { name: 'Turbo Espresso', description: 'Single origin, maximum acceleration', price: '$4.50', hp: '200 HP', image: '/images/espresso.jpg' },
-        { name: 'Double Turbo Shot', description: 'Double the power, double the precision', price: '$6.00', hp: '400 HP', image: '/images/espresso.jpg' },
-        { name: 'Turbo Americano', description: 'Extended range for the long haul', price: '$5.00', hp: '250 HP', image: '/images/espresso.jpg' },
+        { name: 'Turbo Espresso', description: 'Single origin, maximum acceleration', price: '₹4.50', hp: '200 HP', image: '/images/espresso.jpg' },
+        { name: 'Double Turbo Shot', description: 'Double the power, double the precision', price: '₹6.00', hp: '400 HP', image: '/images/espresso.jpg' },
+        { name: 'Turbo Americano', description: 'Extended range for the long haul', price: '₹5.00', hp: '250 HP', image: '/images/espresso.jpg' },
       ]
     },
     {
@@ -23,10 +23,10 @@ const MenuPage = () => {
       icon: <Gauge className="w-8 h-8" />,
       description: 'Smooth, refined milk-based masterpieces',
       items: [
-        { name: 'Velvet Cappuccino', description: 'Smooth as a luxury ride', price: '$5.50', hp: '150 HP', image: '/images/latte-art.jpg' },
-        { name: 'ARABA Signature Latte', description: 'Our flagship blend', price: '$5.00', hp: '180 HP', image: '/images/cappuccino.jpg' },
-        { name: 'Caramel Macchiato GT', description: 'Sweet power for grand touring', price: '$6.00', hp: '200 HP', image: '/images/latte-art.jpg' },
-        { name: 'Mocha Supercharged', description: 'Chocolate boost for extra power', price: '$6.50', hp: '220 HP', image: '/images/cappuccino.jpg' },
+        { name: 'Velvet Cappuccino', description: 'Smooth as a luxury ride', price: '₹5.50', hp: '150 HP', image: '/images/latte-art.jpg' },
+        { name: 'ARABA Signature Latte', description: 'Our flagship blend', price: '₹5.00', hp: '180 HP', image: '/images/cappuccino.jpg' },
+        { name: 'Caramel Macchiato GT', description: 'Sweet power for grand touring', price: '₹6.00', hp: '200 HP', image: '/images/latte-art.jpg' },
+        { name: 'Mocha Supercharged', description: 'Chocolate boost for extra power', price: '₹6.50', hp: '220 HP', image: '/images/cappuccino.jpg' },
       ]
     },
     {
@@ -34,9 +34,9 @@ const MenuPage = () => {
       icon: <Coffee className="w-8 h-8" />,
       description: 'Refreshing cold brews for the open road',
       items: [
-        { name: 'Cold Brew Cruiser', description: 'Smooth, cold-pressed energy', price: '$6.00', hp: '220 HP', image: '/images/cold-brew.jpg' },
-        { name: 'Nitro Cold Brew', description: 'Nitrogen-injected performance', price: '$7.00', hp: '300 HP', image: '/images/cold-brew.jpg' },
-        { name: 'Iced Latte Roadster', description: 'Convertible top-down refreshment', price: '$5.50', hp: '180 HP', image: '/images/cold-brew.jpg' },
+        { name: 'Cold Brew Cruiser', description: 'Smooth, cold-pressed energy', price: '₹6.00', hp: '220 HP', image: '/images/cold-brew.jpg' },
+        { name: 'Nitro Cold Brew', description: 'Nitrogen-injected performance', price: '₹7.00', hp: '300 HP', image: '/images/cold-brew.jpg' },
+        { name: 'Iced Latte Roadster', description: 'Convertible top-down refreshment', price: '₹5.50', hp: '180 HP', image: '/images/cold-brew.jpg' },
       ]
     },
     {
@@ -44,9 +44,9 @@ const MenuPage = () => {
       icon: <Fuel className="w-8 h-8" />,
       description: 'Unique blends for the adventurous driver',
       items: [
-        { name: 'Affogato Racing Edition', description: 'Espresso meets gelato on the track', price: '$7.50', hp: '250 HP', image: '/images/espresso.jpg' },
-        { name: 'Cortado Compact', description: 'Small but mighty performance', price: '$4.00', hp: '160 HP', image: '/images/espresso.jpg' },
-        { name: 'Flat White Formula', description: 'Australian precision engineering', price: '$5.50', hp: '190 HP', image: '/images/latte-art.jpg' },
+        { name: 'Affogato Racing Edition', description: 'Espresso meets gelato on the track', price: '₹7.50', hp: '250 HP', image: '/images/espresso.jpg' },
+        { name: 'Cortado Compact', description: 'Small but mighty performance', price: '₹4.00', hp: '160 HP', image: '/images/espresso.jpg' },
+        { name: 'Flat White Formula', description: 'Australian precision engineering', price: '₹5.50', hp: '190 HP', image: '/images/latte-art.jpg' },
       ]
     },
   ]
@@ -67,7 +67,7 @@ const MenuPage = () => {
             <rect width="100%" height="100%" fill="url(#road-grid)" />
           </svg>
         </div>
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -91,8 +91,8 @@ const MenuPage = () => {
 
       {/* Menu Categories */}
       {menuCategories.map((category, catIndex) => (
-        <section key={catIndex} className={`py-20 ${catIndex % 2 === 0 ? 'bg-araba-cream' : 'bg-araba-beige'}`}>
-          <div className="container mx-auto px-6">
+        <section key={catIndex} className={`py-14 sm:py-16 md:py-20 ${catIndex % 2 === 0 ? 'bg-araba-cream' : 'bg-araba-beige'}`}>
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ const MenuPage = () => {
             >
               <div className="flex items-center justify-center gap-3 mb-4 text-araba-copper">
                 {category.icon}
-                <h2 className="text-4xl font-bold text-araba-olive">{category.category}</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold text-araba-olive">{category.category}</h2>
               </div>
               <p className="text-lg text-araba-charcoal max-w-2xl mx-auto">{category.description}</p>
             </motion.div>
@@ -154,3 +154,4 @@ const MenuPage = () => {
 }
 
 export default MenuPage
+

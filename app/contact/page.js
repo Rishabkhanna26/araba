@@ -46,7 +46,7 @@ const ContactPage = () => {
             <rect width="100%" height="100%" fill="url(#location-pattern)" />
           </svg>
         </div>
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,8 +69,8 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-24 bg-araba-beige">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-20 md:py-24 bg-araba-beige">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -222,7 +222,7 @@ const ContactPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="rounded-3xl overflow-hidden shadow-2xl h-full min-h-[600px] bg-araba-cream relative">
+              <div className="rounded-3xl overflow-hidden shadow-2xl h-full min-h-[420px] sm:min-h-[520px] lg:min-h-[600px] bg-araba-cream relative">
                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-araba-beige to-araba-cream">
                   <div className="text-center p-8">
                     <MapPin className="w-24 h-24 text-araba-olive mx-auto mb-6" />

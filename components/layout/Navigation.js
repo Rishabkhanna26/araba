@@ -13,6 +13,7 @@ const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
   const navLinks = [
+    { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/menu', label: 'Menu' },
     { href: '/experience', label: 'Drive-In' },
@@ -43,7 +44,7 @@ const Navigation = () => {
       >
         <motion.div whileHover={{ scale: 1.05 }}>
           <BrandLogo
-            textClassName="hidden sm:inline"
+            textClassName="hidden xl:inline"
             imageClassName="h-9 w-9 sm:h-11 sm:w-11"
           />
         </motion.div>

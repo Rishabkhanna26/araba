@@ -62,7 +62,7 @@ const AboutPage = () => {
             <rect width="100%" height="100%" fill="url(#road-pattern)" />
           </svg>
         </div>
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -85,8 +85,8 @@ const AboutPage = () => {
       </section>
 
       {/* Story Section */}
-      <section className="py-24 bg-araba-cream">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-20 md:py-24 bg-araba-cream">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -106,12 +106,12 @@ const AboutPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-5xl font-bold text-araba-olive mb-6">Our Origin Story</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-araba-olive mb-6">Our Origin Story</h2>
               <p className="text-lg text-araba-charcoal leading-relaxed mb-6">
                 It started in a small garage workshop in 2015. Alex Rivera, a automotive engineer by day and coffee enthusiast by night, noticed something: the same precision required to tune a high-performance engine could elevate coffee to championship levels.
               </p>
               <p className="text-lg text-araba-charcoal leading-relaxed mb-6">
-                Every extraction time, every pressure gauge reading, every temperature control—it all mattered. Just like in racing, milliseconds make the difference between good and extraordinary.
+                Every extraction time, every pressure gauge reading, every temperature control-it all mattered. Just like in racing, milliseconds make the difference between good and extraordinary.
               </p>
               <p className="text-lg text-araba-charcoal leading-relaxed">
                 Today, ARABA Coffee serves thousands of drivers daily, each cup engineered with the same obsessive attention to detail that goes into a finely-tuned race car.
@@ -122,14 +122,14 @@ const AboutPage = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-24 bg-araba-beige">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-20 md:py-24 bg-araba-beige">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-araba-olive mb-4">Our Core Values</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-araba-olive mb-4">Our Core Values</h2>
             <p className="text-lg text-araba-charcoal max-w-2xl mx-auto">
               The principles that drive us forward, every single day
             </p>
@@ -158,8 +158,8 @@ const AboutPage = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 bg-araba-cream">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-20 md:py-24 bg-araba-cream">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -169,13 +169,13 @@ const AboutPage = () => {
               <Users className="w-8 h-8 text-araba-copper" />
               <span className="text-araba-copper font-semibold text-sm tracking-widest uppercase">Meet The Crew</span>
             </div>
-            <h2 className="text-5xl font-bold text-araba-olive mb-4">Our Pit Crew</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-araba-olive mb-4">Our Pit Crew</h2>
             <p className="text-lg text-araba-charcoal max-w-2xl mx-auto">
               The talented individuals who keep ARABA running at peak performance
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
             {team.map((member, index) => (
               <motion.div
                 key={index}
@@ -199,15 +199,15 @@ const AboutPage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 bg-araba-olive text-araba-cream">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-20 md:py-24 bg-araba-olive text-araba-cream">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="text-6xl font-bold text-araba-copper mb-2">10+</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-araba-copper mb-2">10+</div>
               <div className="text-lg text-araba-beige">Years on the Track</div>
             </motion.div>
             <motion.div
@@ -216,7 +216,7 @@ const AboutPage = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <div className="text-6xl font-bold text-araba-copper mb-2">50K+</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-araba-copper mb-2">50K+</div>
               <div className="text-lg text-araba-beige">Miles Driven with Us</div>
             </motion.div>
             <motion.div
@@ -225,7 +225,7 @@ const AboutPage = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <div className="text-6xl font-bold text-araba-copper mb-2">100%</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-araba-copper mb-2">100%</div>
               <div className="text-lg text-araba-beige">Premium Grade Beans</div>
             </motion.div>
             <motion.div
@@ -234,7 +234,7 @@ const AboutPage = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <div className="text-6xl font-bold text-araba-copper mb-2">24/7</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-araba-copper mb-2">24/7</div>
               <div className="text-lg text-araba-beige">Drive-In Service</div>
             </motion.div>
           </div>

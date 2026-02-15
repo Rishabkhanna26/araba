@@ -65,7 +65,7 @@ const ExperiencePage = () => {
             <path d="M0,300 Q400,250 800,300 T1600,300" stroke="#F7F3ED" strokeWidth="3" fill="none" strokeDasharray="20,10"/>
           </svg>
         </div>
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -92,15 +92,15 @@ const ExperiencePage = () => {
       </section>
 
       {/* Features Grid */}
-      <section className="py-24 bg-araba-cream">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-20 md:py-24 bg-araba-cream">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl font-bold text-araba-olive mb-4">Why ARABA Drive-In?</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-araba-olive mb-4">Why ARABA Drive-In?</h2>
             <p className="text-lg text-araba-charcoal max-w-2xl mx-auto">
               Engineered for the modern driver who refuses to compromise
             </p>
@@ -129,8 +129,8 @@ const ExperiencePage = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-24 bg-araba-beige">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-20 md:py-24 bg-araba-beige">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -141,7 +141,7 @@ const ExperiencePage = () => {
               <Gauge className="w-8 h-8 text-araba-copper" />
               <span className="text-araba-copper font-semibold text-sm tracking-widest uppercase">The Process</span>
             </div>
-            <h2 className="text-5xl font-bold text-araba-olive mb-4">How It Works</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-araba-olive mb-4">How It Works</h2>
             <p className="text-lg text-araba-charcoal max-w-2xl mx-auto">
               Four simple steps to the perfect drive-in experience
             </p>
@@ -174,8 +174,8 @@ const ExperiencePage = () => {
       </section>
 
       {/* Speedometer CTA */}
-      <section className="py-24 bg-gradient-to-br from-araba-olive to-araba-charcoal text-araba-cream">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-araba-olive to-araba-charcoal text-araba-cream">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -183,7 +183,7 @@ const ExperiencePage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-5xl font-bold mb-6">Ready to Hit
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Ready to Hit
                 <br />
                 <span className="text-araba-copper">The Fast Lane?</span>
               </h2>
