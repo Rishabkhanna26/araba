@@ -79,7 +79,7 @@ const App = () => {
       {/* Hero Section */}
       <motion.section
         style={{ opacity, scale }}
-        className="hero-safe-top relative flex min-h-[100svh] items-center justify-center overflow-hidden"
+        className="relative flex min-h-[100svh] items-center justify-center overflow-hidden pt-24 sm:pt-28 md:pt-32"
       >
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-araba-charcoal/80 to-araba-olive/50 z-10"></div>
