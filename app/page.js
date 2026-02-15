@@ -76,32 +76,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-araba-beige overflow-hidden">
-      {/* Navigation */}
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'glass-effect shadow-lg' : 'bg-transparent'
-        }`}
-      >
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-3xl font-bold text-araba-olive tracking-wider"
-          >
-            ARABA
-          </motion.div>
-          <div className="hidden md:flex gap-8 items-center">
-            <a href="#about" className="text-araba-charcoal hover:text-araba-olive smooth-transition">Story</a>
-            <a href="#menu" className="text-araba-charcoal hover:text-araba-olive smooth-transition">Menu</a>
-            <a href="#experience" className="text-araba-charcoal hover:text-araba-olive smooth-transition">Experience</a>
-            <a href="#contact" className="text-araba-charcoal hover:text-araba-olive smooth-transition">Contact</a>
-            <Button className="bg-araba-olive hover:bg-araba-copper text-araba-cream smooth-transition">
-              Order Now
-            </Button>
-          </div>
-        </div>
-      </motion.nav>
+      <Navigation />
 
       {/* Hero Section */}
       <motion.section
