@@ -347,12 +347,13 @@ const App = () => {
 
       {/* Drive-In Experience Section */}
       <section id="experience" className="py-24 bg-araba-olive text-araba-cream relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img
-            src="https://images.unsplash.com/photo-1746040891289-68931e9ec409"
-            alt="Coffee Preparation"
-            className="w-full h-full object-cover"
-          />
+        {/* Road Line Graphics */}
+        <div className="absolute inset-0 opacity-10">
+          <svg className="w-full h-full" preserveAspectRatio="none">
+            <path d="M0,100 Q400,50 800,100 T1600,100" stroke="#F7F3ED" strokeWidth="3" fill="none" strokeDasharray="20,10"/>
+            <path d="M0,200 Q400,150 800,200 T1600,200" stroke="#F7F3ED" strokeWidth="3" fill="none" strokeDasharray="20,10"/>
+            <path d="M0,300 Q400,250 800,300 T1600,300" stroke="#F7F3ED" strokeWidth="3" fill="none" strokeDasharray="20,10"/>
+          </svg>
         </div>
         
         <div className="container mx-auto px-6 relative z-10">
@@ -363,6 +364,10 @@ const App = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
+              <div className="flex items-center gap-3 mb-4">
+                <Navigation className="w-8 h-8 text-araba-copper" />
+                <span className="text-araba-copper font-semibold text-sm tracking-widest uppercase">Fast Lane Service</span>
+              </div>
               <h2 className="text-5xl font-bold mb-6">
                 Drive-In Coffee
                 <br />
@@ -371,31 +376,49 @@ const App = () => {
               <p className="text-lg leading-relaxed mb-6">
                 The perfect pit stop for coffee enthusiasts on the move. Our drive-in 
                 service delivers premium coffee with the speed and efficiency of a 
-                Formula 1 pit crew.
+                Formula 1 pit crew—without compromising on quality.
               </p>
               <p className="text-lg leading-relaxed mb-8">
-                Order ahead, drive through, and experience seamless service without 
-                compromising on quality. Your coffee journey starts here.
+                Order ahead, drive through, and experience seamless service. Your coffee 
+                journey starts at full throttle.
               </p>
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-araba-copper flex items-center justify-center">
-                    <Coffee className="w-6 h-6" />
+              <div className="space-y-4">
+                <motion.div 
+                  className="flex items-center gap-4 bg-araba-cream/10 p-4 rounded-xl backdrop-blur-sm"
+                  whileHover={{ x: 10 }}
+                >
+                  <div className="w-14 h-14 rounded-full bg-araba-copper flex items-center justify-center flex-shrink-0">
+                    <Coffee className="w-7 h-7" />
                   </div>
-                  <span className="text-lg">Order in 30 seconds</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-araba-copper flex items-center justify-center">
-                    <Clock className="w-6 h-6" />
+                  <div>
+                    <span className="text-lg font-bold block">Quick Order</span>
+                    <span className="text-sm text-araba-beige">Place order in 30 seconds</span>
                   </div>
-                  <span className="text-lg">Ready in under 2 minutes</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-araba-copper flex items-center justify-center">
-                    <ChevronRight className="w-6 h-6" />
+                </motion.div>
+                <motion.div 
+                  className="flex items-center gap-4 bg-araba-cream/10 p-4 rounded-xl backdrop-blur-sm"
+                  whileHover={{ x: 10 }}
+                >
+                  <div className="w-14 h-14 rounded-full bg-araba-copper flex items-center justify-center flex-shrink-0">
+                    <Gauge className="w-7 h-7" />
                   </div>
-                  <span className="text-lg">Drive off with perfection</span>
-                </div>
+                  <div>
+                    <span className="text-lg font-bold block">Precision Timing</span>
+                    <span className="text-sm text-araba-beige">Ready in under 2 minutes</span>
+                  </div>
+                </motion.div>
+                <motion.div 
+                  className="flex items-center gap-4 bg-araba-cream/10 p-4 rounded-xl backdrop-blur-sm"
+                  whileHover={{ x: 10 }}
+                >
+                  <div className="w-14 h-14 rounded-full bg-araba-copper flex items-center justify-center flex-shrink-0">
+                    <ChevronRight className="w-7 h-7" />
+                  </div>
+                  <div>
+                    <span className="text-lg font-bold block">Smooth Exit</span>
+                    <span className="text-sm text-araba-beige">Drive off with perfection</span>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
 
@@ -406,58 +429,179 @@ const App = () => {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              {/* Speedometer Graphic */}
+              {/* Enhanced Speedometer Graphic */}
               <div className="relative w-full aspect-square max-w-md mx-auto">
-                <svg viewBox="0 0 200 200" className="w-full h-full">
-                  {/* Outer Circle */}
+                <div className="absolute inset-0 bg-araba-cream/20 rounded-full blur-3xl"></div>
+                <svg viewBox="0 0 240 240" className="w-full h-full relative z-10">
+                  {/* Outer Ring */}
                   <circle
-                    cx="100"
-                    cy="100"
-                    r="90"
+                    cx="120"
+                    cy="120"
+                    r="110"
                     stroke="#F7F3ED"
-                    strokeWidth="4"
+                    strokeWidth="2"
                     fill="none"
                     opacity="0.3"
                   />
-                  {/* Middle Circle */}
+                  {/* Speed Marks */}
+                  {[...Array(12)].map((_, i) => {
+                    const angle = (i * 30 - 90) * (Math.PI / 180)
+                    const x1 = 120 + 100 * Math.cos(angle)
+                    const y1 = 120 + 100 * Math.sin(angle)
+                    const x2 = 120 + 90 * Math.cos(angle)
+                    const y2 = 120 + 90 * Math.sin(angle)
+                    return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#B57A4B" strokeWidth="3" />
+                  })}
+                  {/* Active Arc */}
                   <circle
-                    cx="100"
-                    cy="100"
-                    r="70"
+                    cx="120"
+                    cy="120"
+                    r="85"
                     stroke="#B57A4B"
-                    strokeWidth="6"
+                    strokeWidth="8"
                     fill="none"
-                    strokeDasharray="440"
-                    strokeDashoffset="110"
+                    strokeDasharray="530"
+                    strokeDashoffset="130"
                     className="transform -rotate-90 origin-center"
+                    strokeLinecap="round"
                   />
-                  {/* Inner Circle */}
+                  {/* Center Circle */}
                   <circle
-                    cx="100"
-                    cy="100"
-                    r="50"
+                    cx="120"
+                    cy="120"
+                    r="60"
                     fill="#F7F3ED"
-                    opacity="0.9"
+                    opacity="0.95"
                   />
                   <text
-                    x="100"
-                    y="95"
+                    x="120"
+                    y="110"
                     textAnchor="middle"
-                    className="text-2xl font-bold fill-araba-olive"
+                    className="text-3xl font-bold fill-araba-olive"
                   >
                     ARABA
                   </text>
                   <text
-                    x="100"
-                    y="115"
+                    x="120"
+                    y="135"
                     textAnchor="middle"
-                    className="text-sm fill-araba-charcoal"
+                    className="text-base fill-araba-copper font-semibold"
                   >
-                    Premium
+                    DRIVE-IN
                   </text>
                 </svg>
+                {/* Floating Icons */}
+                <motion.div
+                  animate={{ y: [0, -20, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="absolute top-10 right-10 w-16 h-16 bg-araba-copper rounded-full flex items-center justify-center shadow-2xl"
+                >
+                  <Fuel className="w-8 h-8 text-white" />
+                </motion.div>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-24 bg-araba-beige">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Coffee className="w-8 h-8 text-araba-copper" />
+              <span className="text-araba-copper font-semibold text-sm tracking-widest uppercase">Visual Journey</span>
+            </div>
+            <h2 className="text-5xl font-bold text-araba-olive mb-4">Gallery</h2>
+            <p className="text-lg text-araba-charcoal max-w-2xl mx-auto">
+              Take a visual drive through our café experience
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {galleryImages.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, zIndex: 10 }}
+                className={`relative overflow-hidden rounded-2xl shadow-lg cursor-pointer ${
+                  index === 0 ? 'md:col-span-2 md:row-span-2' : ''
+                }`}
+              >
+                <img
+                  src={image}
+                  alt={`Gallery ${index + 1}`}
+                  className={`w-full object-cover smooth-transition ${
+                    index === 0 ? 'h-full min-h-[400px]' : 'h-64'
+                  }`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-araba-charcoal/70 to-transparent opacity-0 hover:opacity-100 smooth-transition flex items-end p-6">
+                  <span className="text-white font-semibold text-lg">ARABA Collection</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-araba-cream">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Star className="w-8 h-8 text-araba-copper fill-araba-copper" />
+              <span className="text-araba-copper font-semibold text-sm tracking-widest uppercase">Driver Reviews</span>
+            </div>
+            <h2 className="text-5xl font-bold text-araba-olive mb-4">What Our Drivers Say</h2>
+            <p className="text-lg text-araba-charcoal max-w-2xl mx-auto">
+              Real feedback from coffee enthusiasts on the fast lane
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card className="p-8 border-none shadow-lg hover:shadow-xl smooth-transition bg-white relative">
+                  <Quote className="w-12 h-12 text-araba-copper/20 absolute top-6 right-6" />
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-araba-copper fill-araba-copper" />
+                    ))}
+                  </div>
+                  <p className="text-araba-charcoal mb-6 leading-relaxed italic">
+                    "{testimonial.text}"
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-araba-olive flex items-center justify-center text-white font-bold text-lg">
+                      {testimonial.name.charAt(0)}
+                    </div>
+                    <div>
+                      <div className="font-bold text-araba-olive">{testimonial.name}</div>
+                      <div className="text-sm text-araba-charcoal/70">{testimonial.role}</div>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
