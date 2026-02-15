@@ -615,25 +615,29 @@ const App = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl font-bold text-araba-olive mb-4">Visit Us</h2>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <MapPin className="w-8 h-8 text-araba-copper" />
+              <span className="text-araba-copper font-semibold text-sm tracking-widest uppercase">Find Your Pit Stop</span>
+            </div>
+            <h2 className="text-5xl font-bold text-araba-olive mb-4">Visit Our Station</h2>
             <p className="text-lg text-araba-charcoal max-w-2xl mx-auto">
-              Experience the ARABA difference in person
+              Navigate to ARABA Coffee and experience the drive
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <Card className="p-8 text-center border-none shadow-lg hover:shadow-xl smooth-transition">
-                <div className="w-16 h-16 rounded-full bg-araba-olive flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="w-8 h-8 text-araba-cream" />
+              <Card className="p-8 text-center border-none shadow-lg hover:shadow-xl smooth-transition bg-white group">
+                <div className="w-20 h-20 rounded-full bg-araba-olive flex items-center justify-center mx-auto mb-6 group-hover:scale-110 smooth-transition">
+                  <MapPin className="w-10 h-10 text-araba-cream" />
                 </div>
-                <h3 className="text-xl font-bold text-araba-olive mb-2">Location</h3>
-                <p className="text-araba-charcoal">123 Premium Boulevard<br />Coffee District, CD 10001</p>
+                <h3 className="text-xl font-bold text-araba-olive mb-3">Our Location</h3>
+                <p className="text-araba-charcoal leading-relaxed">123 Premium Boulevard<br />Coffee District, CD 10001<br />Near Automotive Plaza</p>
               </Card>
             </motion.div>
 
@@ -643,12 +647,12 @@ const App = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <Card className="p-8 text-center border-none shadow-lg hover:shadow-xl smooth-transition">
-                <div className="w-16 h-16 rounded-full bg-araba-copper flex items-center justify-center mx-auto mb-4">
-                  <Clock className="w-8 h-8 text-white" />
+              <Card className="p-8 text-center border-none shadow-lg hover:shadow-xl smooth-transition bg-white group">
+                <div className="w-20 h-20 rounded-full bg-araba-copper flex items-center justify-center mx-auto mb-6 group-hover:scale-110 smooth-transition">
+                  <Clock className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-araba-olive mb-2">Hours</h3>
-                <p className="text-araba-charcoal">Mon - Fri: 7AM - 8PM<br />Sat - Sun: 8AM - 9PM</p>
+                <h3 className="text-xl font-bold text-araba-olive mb-3">Operating Hours</h3>
+                <p className="text-araba-charcoal leading-relaxed">Mon - Fri: 7AM - 8PM<br />Sat - Sun: 8AM - 9PM<br />Drive-In: Always Open</p>
               </Card>
             </motion.div>
 
@@ -658,58 +662,148 @@ const App = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <Card className="p-8 text-center border-none shadow-lg hover:shadow-xl smooth-transition">
-                <div className="w-16 h-16 rounded-full bg-araba-olive flex items-center justify-center mx-auto mb-4">
-                  <Phone className="w-8 h-8 text-araba-cream" />
+              <Card className="p-8 text-center border-none shadow-lg hover:shadow-xl smooth-transition bg-white group">
+                <div className="w-20 h-20 rounded-full bg-araba-olive flex items-center justify-center mx-auto mb-6 group-hover:scale-110 smooth-transition">
+                  <Phone className="w-10 h-10 text-araba-cream" />
                 </div>
-                <h3 className="text-xl font-bold text-araba-olive mb-2">Contact</h3>
-                <p className="text-araba-charcoal">+1 (555) 123-4567<br />hello@arabacoffee.com</p>
+                <h3 className="text-xl font-bold text-araba-olive mb-3">Contact Us</h3>
+                <p className="text-araba-charcoal leading-relaxed">+1 (555) 123-4567<br />hello@arabacoffee.com<br />@arabacoffee</p>
               </Card>
             </motion.div>
           </div>
+
+          {/* Embedded Map */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-3xl overflow-hidden shadow-2xl h-96 bg-araba-cream relative"
+          >
+            {/* Map Placeholder with Road Pattern */}
+            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-araba-beige to-araba-cream">
+              <div className="text-center">
+                <MapPin className="w-20 h-20 text-araba-olive mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-araba-olive mb-2">Find Us Here</h3>
+                <p className="text-araba-charcoal mb-6">123 Premium Boulevard, Coffee District</p>
+                <Button className="bg-araba-copper hover:bg-araba-olive text-white">
+                  <Navigation className="mr-2" />
+                  Get Directions
+                </Button>
+              </div>
+              {/* Road line decoration */}
+              <svg className="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="map-roads" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                    <line x1="0" y1="50" x2="100" y2="50" stroke="#4B6535" strokeWidth="2"/>
+                    <line x1="50" y1="0" x2="50" y2="100" stroke="#4B6535" strokeWidth="2"/>
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#map-roads)" />
+              </svg>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-araba-charcoal text-araba-cream py-12">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="text-2xl font-bold mb-4 text-araba-copper">ARABA</h3>
-              <p className="text-sm text-araba-beige">
-                Where premium coffee meets automotive precision
+      <footer className="bg-araba-charcoal text-araba-cream py-16 relative overflow-hidden">
+        {/* Subtle Road Lines in Background */}
+        <div className="absolute inset-0 opacity-5">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#F7F3ED" strokeWidth="2" strokeDasharray="20,10"/>
+          </svg>
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
+            <div className="md:col-span-1">
+              <div className="flex items-center gap-3 mb-4">
+                <Gauge className="w-10 h-10 text-araba-copper" />
+                <h3 className="text-3xl font-bold text-araba-copper">ARABA</h3>
+              </div>
+              <p className="text-araba-beige leading-relaxed mb-6">
+                Where premium coffee meets automotive precision. Engineering excellence in every cup.
               </p>
+              <div className="flex gap-4">
+                <motion.a 
+                  href="#" 
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="w-10 h-10 rounded-full bg-araba-olive flex items-center justify-center hover:bg-araba-copper smooth-transition"
+                >
+                  <Instagram className="w-5 h-5" />
+                </motion.a>
+                <motion.a 
+                  href="#" 
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="w-10 h-10 rounded-full bg-araba-olive flex items-center justify-center hover:bg-araba-copper smooth-transition"
+                >
+                  <Facebook className="w-5 h-5" />
+                </motion.a>
+                <motion.a 
+                  href="#" 
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="w-10 h-10 rounded-full bg-araba-olive flex items-center justify-center hover:bg-araba-copper smooth-transition"
+                >
+                  <Twitter className="w-5 h-5" />
+                </motion.a>
+                <motion.a 
+                  href="#" 
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="w-10 h-10 rounded-full bg-araba-olive flex items-center justify-center hover:bg-araba-copper smooth-transition"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </motion.a>
+              </div>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#about" className="hover:text-araba-copper smooth-transition">Our Story</a></li>
-                <li><a href="#menu" className="hover:text-araba-copper smooth-transition">Menu</a></li>
-                <li><a href="#experience" className="hover:text-araba-copper smooth-transition">Experience</a></li>
-                <li><a href="#contact" className="hover:text-araba-copper smooth-transition">Contact</a></li>
+              <h4 className="font-bold text-lg mb-4 text-araba-copper flex items-center gap-2">
+                <Navigation className="w-5 h-5" />
+                Quick Nav
+              </h4>
+              <ul className="space-y-3 text-araba-beige">
+                <li><a href="#about" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Our Story</a></li>
+                <li><a href="#menu" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Performance Menu</a></li>
+                <li><a href="#experience" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Drive-In Experience</a></li>
+                <li><a href="#contact" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Contact Station</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-araba-copper smooth-transition">Drive-In Coffee</a></li>
-                <li><a href="#" className="hover:text-araba-copper smooth-transition">Mobile Orders</a></li>
-                <li><a href="#" className="hover:text-araba-copper smooth-transition">Catering</a></li>
-                <li><a href="#" className="hover:text-araba-copper smooth-transition">Gift Cards</a></li>
+              <h4 className="font-bold text-lg mb-4 text-araba-copper flex items-center gap-2">
+                <Fuel className="w-5 h-5" />
+                Services
+              </h4>
+              <ul className="space-y-3 text-araba-beige">
+                <li><a href="#" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Drive-In Coffee</a></li>
+                <li><a href="#" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Quick Orders</a></li>
+                <li><a href="#" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Corporate Catering</a></li>
+                <li><a href="#" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Gift Cards</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Connect</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-araba-copper smooth-transition">Instagram</a></li>
-                <li><a href="#" className="hover:text-araba-copper smooth-transition">Facebook</a></li>
-                <li><a href="#" className="hover:text-araba-copper smooth-transition">Twitter</a></li>
-                <li><a href="#" className="hover:text-araba-copper smooth-transition">LinkedIn</a></li>
+              <h4 className="font-bold text-lg mb-4 text-araba-copper flex items-center gap-2">
+                <Coffee className="w-5 h-5" />
+                Connect
+              </h4>
+              <ul className="space-y-3 text-araba-beige">
+                <li><a href="#" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Careers</a></li>
+                <li><a href="#" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Franchise</a></li>
+                <li><a href="#" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Press Kit</a></li>
+                <li><a href="#" className="hover:text-araba-copper smooth-transition hover:pl-2 block">Newsletter</a></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-araba-copper/30 pt-8 text-center text-sm text-araba-beige">
-            <p>&copy; 2025 ARABA Coffee. All rights reserved. Crafted with precision.</p>
+          
+          <div className="border-t border-araba-copper/30 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-araba-beige text-sm">
+                &copy; 2025 ARABA Coffee. All rights reserved. Crafted with precision & passion.
+              </p>
+              <div className="flex gap-6 text-sm text-araba-beige">
+                <a href="#" className="hover:text-araba-copper smooth-transition">Privacy Policy</a>
+                <a href="#" className="hover:text-araba-copper smooth-transition">Terms of Service</a>
+                <a href="#" className="hover:text-araba-copper smooth-transition">Accessibility</a>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
