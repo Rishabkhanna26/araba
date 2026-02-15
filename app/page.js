@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
-import { Coffee, ChevronRight, Gauge, Fuel, Navigation as NavIcon, Star, Quote } from 'lucide-react'
+import { Coffee, ChevronRight, Gauge, Fuel, Navigation as NavIcon, Star, Quote, MapPin, Clock, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import Navigation from '@/components/Navigation'
