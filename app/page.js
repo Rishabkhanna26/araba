@@ -79,10 +79,11 @@ const App = () => {
       {/* Hero Section */}
       <motion.section
         style={{ opacity, scale }}
-        className="relative flex min-h-[100svh] items-center justify-center overflow-hidden pt-24 sm:pt-28 md:pt-32"
+        className="relative flex min-h-[100svh] items-center overflow-hidden pt-24 sm:pt-28 md:pt-32"
       >
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-araba-charcoal/80 to-araba-olive/50 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-araba-charcoal/90 via-araba-charcoal/65 to-araba-olive/55 z-10"></div>
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-araba-charcoal/35 via-transparent to-araba-copper/10" />
           <img
             src="/images/premium-seating.jpg"
             alt="Premium Cafe Interior"
@@ -94,49 +95,72 @@ const App = () => {
           <div className="light-streak" style={{ animationDelay: '3s', top: '70%' }}></div>
         </div>
         
-        <div className="container mx-auto px-4 sm:px-6 z-20 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            {/* Gear Icon Decoration */}
+        <div className="container mx-auto px-4 sm:px-6 z-20">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
             <motion.div
-              initial={{ rotate: 0 }}
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="w-20 h-20 mx-auto mb-6 opacity-40"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Gauge className="w-full h-full text-araba-copper" />
+              <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-araba-copper/40 bg-araba-charcoal/70 px-4 py-2">
+                <Gauge className="h-4 w-4 text-araba-copper" />
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-araba-beige">Cafe Culture x Car Culture</span>
+              </div>
+
+              <h1 className="mb-6 max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight text-araba-cream sm:text-5xl md:text-7xl lg:text-8xl">
+                Handcrafted Coffee
+                <br />
+                <span className="accent-italic text-araba-copper">Built With Performance Soul.</span>
+              </h1>
+              <p className="mb-9 max-w-2xl text-base leading-relaxed text-araba-beige sm:text-lg md:text-xl">
+                A premium pit stop for people who love clean brews, clean machines, and clean design.
+                Every cup is tuned with precision and served with cafe elegance.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 sm:items-center rounded-2xl bg-araba-charcoal/60 p-3 w-fit">
+                <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+                  <Button asChild size="lg" className="bg-araba-copper hover:bg-araba-olive text-white text-base sm:text-lg px-7 sm:px-10 py-6 sm:py-7 rounded-full smooth-transition shadow-2xl w-56 sm:w-auto">
+                    <Link href="/menu">
+                      <Coffee className="mr-2" />
+                      Explore Menu
+                    </Link>
+                  </Button>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+                  <Button asChild size="lg" variant="outline" className="bg-araba-cream/95 border-2 border-araba-cream text-araba-olive hover:bg-araba-cream hover:text-araba-charcoal text-base sm:text-lg px-7 sm:px-10 py-6 sm:py-7 rounded-full smooth-transition shadow-2xl w-56 sm:w-auto">
+                    <Link href="/experience">
+                      <NavIcon className="mr-2" />
+                      Drive-In Flow
+                    </Link>
+                  </Button>
+                </motion.div>
+              </div>
             </motion.div>
-            
-            <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-araba-cream sm:text-5xl md:text-8xl">
-              Crafted Coffee.
-              <br />
-              <span className="accent-italic text-araba-copper">Smooth Like a Drive.</span>
-            </h1>
-            <p className="mx-auto mb-10 max-w-3xl text-base leading-relaxed text-araba-beige sm:text-lg md:text-2xl">
-              Where precision engineering meets artisan coffee. Every cup calibrated for the perfect journey.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center rounded-2xl bg-araba-charcoal/25 p-3 backdrop-blur-sm">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button asChild size="lg" className="bg-araba-copper hover:bg-araba-olive text-white text-base sm:text-lg px-7 sm:px-10 py-6 sm:py-7 rounded-full smooth-transition shadow-2xl w-56 sm:w-auto">
-                  <Link href="/menu">
-                    <Coffee className="mr-2" />
-                    View Menu
-                  </Link>
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button asChild size="lg" variant="outline" className="bg-araba-cream/95 border-2 border-araba-cream text-araba-olive hover:bg-araba-cream hover:text-araba-charcoal text-base sm:text-lg px-7 sm:px-10 py-6 sm:py-7 rounded-full smooth-transition shadow-2xl w-56 sm:w-auto">
-                  <Link href="/contact">
-                    <NavIcon className="mr-2" />
-                    Visit Us
-                  </Link>
-                </Button>
-              </motion.div>
-            </div>
-          </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.35 }}
+              className="lg:justify-self-end"
+            >
+              <div className="grid grid-cols-2 gap-4 rounded-2xl border border-araba-cream/20 bg-araba-charcoal/65 p-4 max-w-md ml-auto">
+                <div className="rounded-xl bg-araba-cream/95 p-4">
+                  <p className="text-xs uppercase tracking-[0.12em] text-araba-charcoal/70">Signature</p>
+                  <p className="mt-2 text-xl font-bold text-araba-olive">Turbo Espresso</p>
+                </div>
+                <div className="rounded-xl bg-araba-copper p-4">
+                  <p className="text-xs uppercase tracking-[0.12em] text-white/85">Service Time</p>
+                  <p className="mt-2 text-xl font-bold text-white">~2 mins</p>
+                </div>
+                <div className="col-span-2 rounded-xl border border-araba-copper/30 bg-araba-charcoal/55 p-4">
+                  <p className="text-xs uppercase tracking-[0.12em] text-araba-beige/80">Owner's Note</p>
+                  <p className="mt-2 text-sm leading-relaxed text-araba-cream/90">
+                    Designed for coffee lovers who appreciate the same details they look for in a great car.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
         {/* Curved Divider */}

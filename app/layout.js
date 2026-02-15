@@ -15,7 +15,28 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${manrope.variable} ${playfair.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (() => {
+                document.addEventListener('contextmenu', (e) => e.preventDefault());
+                document.addEventListener('keydown', (e) => {
+                  const key = e.key.toLowerCase();
+                  if (
+                    key === 'f12' ||
+                    (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(key)) ||
+                    (e.ctrlKey && key === 'u')
+                  ) {
+                    e.preventDefault();
+                  }
+                });
+              })();
+            `,
+          }}
+        />
+        {children}
+      </body>
     </html>
   )
 }
